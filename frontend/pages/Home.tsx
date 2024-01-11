@@ -1,11 +1,13 @@
 import React, { FC, useState, useEffect } from "react"
+import { styled } from "styled-components"
 import { Principal } from "@dfinity/principal"
 import { AnonymousIdentity, HttpAgent, Actor } from "@dfinity/agent"
 import { idlFactory } from "../idl/icrc1_ledger"
 import { _SERVICE } from "../idl/icrc1_ledger_types"
 import { HOST_IC, MY_LEDGER_CANISTER_ID } from "../constants/_index"
+import { Metadata } from "./_index"
 
-interface Metadata {
+export interface Metadata {
   name: string
   symbol: string
   fee: number
@@ -58,14 +60,24 @@ const Home: FC = (): JSX.Element => {
   }, [token])
 
   return (
-    <div>
-      {metadata && (
-        <pre>
-          <code>{JSON.stringify(metadata, null, 2)}</code>
-        </pre>
-      )}
-    </div>
+    <HomeStyled>
+      <a
+        href="fq7md-ayaaa-aaaag-abpea-cai"
+        target="_blank"
+        rel="noreferrer noopener"
+      >
+        a4gq6-oaaaa-aaaab-qaa4q-cai.raw.ic0.app/?id=fq7md-ayaaa-aaaag-abpea-cai
+      </a>
+      <Metadata metadata={metadata} />
+    </HomeStyled>
   )
 }
+
+const HomeStyled = styled.div`
+  > a {
+    display: inline-block;
+    margin-bottom: 1rem;
+  }
+`
 
 export default Home
