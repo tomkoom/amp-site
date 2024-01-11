@@ -1,0 +1,109 @@
+/* root */
+
+/* Inter */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap");
+
+/* Inconsolata */
+@import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;500;700;900&display=swap");
+
+:root {
+  /* Cool Gray IBM https://www.ibm.com/design/language/color/ */
+
+  --coolGray100: #121619;
+  --coolGray100Rgb: 18, 22, 25;
+  --coolGray90: #21272a;
+  --coolGray80: #343a3f;
+  --coolGray70: #4d5358;
+  --coolGray60: #697077;
+  --coolGray50: #878d96;
+  --coolGray40: #a2a9b0;
+  --coolGray30: #c1c7cd;
+  --coolGray20: #dde1e6;
+  --coolGray10: #f2f4f8;
+  --coolGray10Rgb: 242, 244, 248;
+
+  --black: #000000;
+  --white: #ffffff;
+
+  /* highlight colors */
+
+  /* cards */
+
+  --cRed: #e00606;
+  --cBlack: black;
+
+  /* system colors */
+
+  --colorTeal: #004d40;
+  --colorGreen: #64dd17;
+  --colorBlue: #64dd17;
+  --colorRed: #fa4d56;
+  --colorOrange: #ff3d00;
+
+  --suitOrange: #ef6c00;
+  --suitAmber: #ff8f00;
+  --suitRed: #c62828;
+  --suitBlue: #1565c0;
+  --suitGreen: #2e7d32;
+  --suitTeal: #00695c;
+  --suitBlack: var(--coolGray100);
+
+  --colorWarning: #c62828;
+
+  /* social colors */
+
+  --colorTwitter: #00acee;
+  --colorDiscord: #5865f2;
+  --colorTelegram: #0088cc;
+  --colorFacebook: #1877f2;
+  --colorLinkedIn: #1877f2;
+  --colorReddit: #ff5700;
+  --colorGitHub: #1b1f23;
+  --colorEntrepot: #53bfa8;
+  --colorCrowdfundNft: #0d69ef;
+
+  /* font-size */
+
+  --fs1: 3.815rem;
+  --fs2: 3.052rem;
+  --fs3: 2.441rem;
+  --fs4: 1.953rem;
+  --fs5: 1.563rem;
+  --fs6: 1.25rem;
+  --fs7: 1rem;
+  --fsText: 0.9rem;
+
+  /* font-size */
+
+  /* --fs0: 3.815rem;
+	--fs1: 3.052rem;
+	--fs2: 2.441rem;
+	--fs3: 1.953rem;
+	--fs4: 1.563rem;
+	--fs5: 1.25rem;
+	--fs6: 1rem;
+	--fsText: 0.9rem;
+	--fs7: 0.8rem; */
+
+  /* font-weight fw */
+
+  --fwBlack: 900;
+  /* --fwExtraBold: 800; */
+  --fwBold: 700;
+  /* --fwSemiBold: 600; */
+  --fwMedium: 500;
+  --fwRegular: 400;
+
+  /* font-family */
+
+  --fontFamily: "Inter", sans-serif;
+  --monospace: "Inconsolata", monospace;
+
+  /* shadows */
+
+  --shadow1: rgba(var(--primaryColorRgb), 0.16) 0px 1px 4px;
+
+  /* animation */
+
+  --transition1: all 0.25s, opacity 1s;
+}
