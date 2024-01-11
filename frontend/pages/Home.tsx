@@ -1,7 +1,11 @@
 import React, { FC } from "react"
 
 const Home: FC = (): JSX.Element => {
-  return <div>Home</div>
+  return (
+    <div>
+      <p>Home</p>
+    </div>
+  )
 }
 
 export default Home

@@ -4,8 +4,10 @@ import { styled } from "styled-components"
 // import * as counter from "../.dfx/local/canisters/backend"
 
 const App: FC = (): JSX.Element => {
+  const theme = "light"
+
   return (
-    <AppStyled>
+    <AppStyled className={theme}>
       <Home />
     </AppStyled>
   )

@@ -5,8 +5,9 @@ import App from "./App"
 // css
 import "./styles/main.css"
 import "./styles/root.css"
+import "./styles/theme.css"
 
-const Index: FC = (): JSX.Element => {
+const Main: FC = (): JSX.Element => {
   return (
     <React.StrictMode>
       <App />
@@ -16,4 +17,4 @@ const Index: FC = (): JSX.Element => {
 
 const container = document.getElementById("root") as HTMLElement
 const root = createRoot(container!)
-root.render(<Index />)
+root.render(<Main />)

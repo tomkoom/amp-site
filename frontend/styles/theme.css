@@ -1,0 +1,16 @@
+/* theme */
+
+.light {
+  /* main */
+  --primaryColor: var(--coolGray100);
+  --primaryColorRgb: var(--coolGray100Rgb);
+  --secondaryColor: var(--coolGray70);
+  --tertiaryColor: var(--coolGray50);
+  --background: #fff;
+  --backgroundRgb: 255, 255, 255;
+
+  /* underlay */
+  --underlay1: var(--coolGray10);
+  --underlay2: var(--coolGray20);
+  --underlay3: var(--coolGray30);
+}

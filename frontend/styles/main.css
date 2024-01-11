@@ -4,4 +4,5 @@
   margin: 0;
   font-family: var(--fontFamily);
   font-size: 16px; /* root font size */
+  color: var(--primaryColor);
 }
