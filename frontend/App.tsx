@@ -4,7 +4,7 @@ import { styled } from "styled-components"
 // import * as counter from "../.dfx/local/canisters/backend"
 
 const App: FC = (): JSX.Element => {
-  const theme = "light"
+  const theme = "dark"
 
   return (
     <AppStyled className={theme}>
@@ -13,8 +13,6 @@ const App: FC = (): JSX.Element => {
   )
 }
 
-const AppStyled = styled.div`
-  padding: 1rem;
-`
+const AppStyled = styled.div``
 
 export default () => <App />

@@ -85,7 +85,8 @@ export default defineConfig({
       },
     },
     // cancel hot module reload
-    hmr: { overlay: false },
+    hmr: false,
+    // hmr: { overlay: false },
   },
   define: {
     // Here we can define global constants
