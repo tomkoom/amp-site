@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit"
-import type { RootState } from "@/state/_store"
+import type { RootState } from "./_store"
 
 interface TemplateState {
   template: string

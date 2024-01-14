@@ -12,6 +12,7 @@ const Header: FC = (): JSX.Element => {
   const changeTheme = (): void => {
     dispatch(setTheme(theme === "light" ? "dark" : "light"))
   }
+
   return (
     <HeaderStyled>
       <div className="nav">
