@@ -1,13 +1,22 @@
 import React, { FC } from "react"
 import { styled } from "styled-components"
 
+// state
+import { useAppDispatch, useAppSelector } from "../hooks/useRedux"
+import { setTheme, selectTheme } from "../state/theme"
+
 const Header: FC = (): JSX.Element => {
+  const dispatch = useAppDispatch()
+  const theme = useAppSelector(selectTheme)
+
+  const changeTheme = (): void => {
+    dispatch(setTheme(theme === "light" ? "dark" : "light"))
+  }
   return (
     <HeaderStyled>
       <div className="nav">
         <h1>&</h1>
-        {/* <button onClick={() => {}}>light/dark</button> */}
-        <span onClick={() => {}}>light/dark</span>
+        <button onClick={changeTheme}>light/dark</button>
       </div>
 
       <p className="description">
