@@ -1,6 +1,6 @@
 import React from "react"
 import { styled } from "styled-components"
-import { projectName } from "../constants/_index"
+import { PROJECT_NAME } from "../constants/_index"
 
 const Footer = () => {
   const d = new Date()
@@ -9,7 +9,7 @@ const Footer = () => {
   return (
     <FooterStyled>
       <p>
-        {year} © {projectName}
+        {year} © {PROJECT_NAME}
       </p>
     </FooterStyled>
   )

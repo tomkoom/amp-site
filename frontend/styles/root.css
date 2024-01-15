@@ -63,7 +63,8 @@
 
   /* font-family */
 
-  --fontFamily: "Gluten", cursive;
+  --fontFamily: "Gluten", sans-serif;
+  /* --fontFamily: "Gluten", cursive; */
   /* --fontFamily: "Alike Angular", serif; */
   /* --fontFamily: "Inter", sans-serif; */
   --monospace: "Inconsolata", monospace;

@@ -11,24 +11,24 @@ const Metadata: FC<MetadataProps> = ({ metadata }): JSX.Element => {
   return (
     <MetadataStyled>
       <div>
-        <p className="label">name</p>
+        <p className="label">Name</p>
         <p className="value">{metadata?.name ? metadata?.name : "..."}</p>
       </div>
 
       <div>
-        <p className="label">symbol</p>
+        <p className="label">Symbol</p>
         <p className="value">{metadata?.symbol ? metadata?.symbol : "..."}</p>
       </div>
 
       <div>
-        <p className="label">fee</p>
+        <p className="label">Fee</p>
         <p className="value">
           {metadata?.fee ? (metadata.fee / E8S).toFixed(4) : "..."}
         </p>
       </div>
 
       <div>
-        <p className="label">total supply</p>
+        <p className="label">Total Supply</p>
         <p className="value">
           {metadata?.total_supply
             ? (metadata.total_supply / E8S).toFixed(8)
