@@ -19,15 +19,27 @@ const Header: FC = (): JSX.Element => {
     <HeaderStyled>
       <div className="nav">
         <h1>{PROJECT_NAME}</h1>
-        <button onClick={changeTheme}>light/dark</button>
+        <button onClick={changeTheme}>
+          <span
+            style={theme === "light" ? { textDecoration: "underline" } : null}
+          >
+            light
+          </span>
+          /
+          <span
+            style={theme === "dark" ? { textDecoration: "underline" } : null}
+          >
+            dark
+          </span>
+        </button>
       </div>
 
       <p className="description">
-        {PROJECT_NAME} is a social money & payments token on the Internet
-        Computer. It is experimental at its initial stage because there is no
-        defined roadmap and its value is determined by the community's
-        commitment, how many projects it's been integrated into and how many
-        utilities it has. It is distributed through airdrops and incentives.
+        {PROJECT_NAME} is a social money/payments token on the Internet Computer. It is
+        experimental at its initial stage because there is no defined roadmap
+        and its value is determined by the community's commitment, how many
+        projects it's been integrated into and how many utilities it has. It is
+        distributed through airdrops and incentives.
       </p>
 
       <div className="links">
