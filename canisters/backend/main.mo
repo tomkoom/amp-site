@@ -3,6 +3,7 @@ import Text "mo:base/Text";
 import Iter "mo:base/Iter";
 import Principal "mo:base/Principal";
 import Time "mo:base/Time";
+import Nat "mo:base/Nat";
 
 // ...
 import T "./types";
@@ -15,6 +16,9 @@ actor {
   let token = actor (tokenCanister) : Ledger.Self;
   let nodeId = "";
   let adminId = "qacbl-dmvvz-7f4rd-qdkp2-drupw-qch3e-35tpx-xl6gh-my5bf-wndbh-xae";
+  let e8s = 10 ** 8;
+  let og1Amount = 10_000 * e8s;
+  let og2Amount = 2_500 * e8s;
 
   // stable
 
@@ -60,10 +64,19 @@ actor {
 
     if (not user.claimed) {
       let id = Principal.fromText(principalId);
-      let amount = 1_000 * (10 ** 8);
-      let transferRes = await _sendTokens(id, amount);
-      usersOg1.put(discordUserId, { user with claimed = true; claimTimestamp = ?Time.now() });
-      return ?transferRes
+      var amount = 0;
+
+      if (role == "og1") {
+        let transferRes = await _sendTokens(id, og1Amount);
+        usersOg1.put(discordUserId, { user with claimed = true; claimTimestamp = ?Time.now() });
+        return ?transferRes
+      };
+
+      if (role == "og2") {
+        let transferRes = await _sendTokens(id, og2Amount);
+        usersOg2.put(discordUserId, { user with claimed = true; claimTimestamp = ?Time.now() });
+        return ?transferRes
+      }
     };
 
     return null
@@ -71,18 +84,18 @@ actor {
 
   // query
 
-  public shared query ({ caller }) func claimedOg1UsersNum() : async Nat {
-    if (caller != Principal.fromText(nodeId)) return 0;
+  public shared query ({ caller }) func claimedOg1UsersNum() : async Text {
+    if (caller != Principal.fromText(nodeId)) return "";
     var num = 0;
     for (user in usersOg1.vals()) if (user.claimed) num += 1;
-    return num
+    return Nat.toText(num) # "/" # Nat.toText(usersOg1.size())
   };
 
-  public shared query ({ caller }) func claimedOg2UsersNum() : async Nat {
-    if (caller != Principal.fromText(nodeId)) return 0;
+  public shared query ({ caller }) func claimedOg2UsersNum() : async Text {
+    if (caller != Principal.fromText(nodeId)) return "";
     var num = 0;
     for (user in usersOg2.vals()) if (user.claimed) num += 1;
-    return num
+    return Nat.toText(num) # "/" # Nat.toText(usersOg2.size())
   };
 
   // state
