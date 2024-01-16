@@ -18,7 +18,11 @@ const Header: FC = (): JSX.Element => {
   return (
     <HeaderStyled>
       <div className="nav">
-        <h1>{PROJECT_NAME}</h1>
+        <div className="nav_items">
+          <h1>{PROJECT_NAME}</h1>
+          <span>explorer</span>
+        </div>
+
         <button onClick={changeTheme}>
           <span
             style={theme === "light" ? { textDecoration: "underline" } : null}
@@ -35,11 +39,11 @@ const Header: FC = (): JSX.Element => {
       </div>
 
       <p className="description">
-        {PROJECT_NAME} is a social money/payments token on the Internet Computer. It is
-        experimental at its initial stage because there is no defined roadmap
-        and its value is determined by the community's commitment, how many
-        projects it's been integrated into and how many utilities it has. It is
-        distributed through airdrops and incentives.
+        {PROJECT_NAME} is a social money/payments token on the Internet
+        Computer. It is experimental at its initial stage because there is no
+        defined roadmap and its value is determined by the community's
+        commitment, how many projects it's been integrated into and how many
+        utilities it has. It is distributed through the airdrops and incentives.
       </p>
 
       <div className="links">
@@ -51,11 +55,12 @@ const Header: FC = (): JSX.Element => {
           Token Params <span>{iExternalLink}</span>
         </a>
         <a
+          id="discord"
           href="https://discord.gg/pvaBPqcwA2"
           target="_blank"
           rel="noreferrer noopener"
         >
-          Follow on Discord <span>{iDiscord}</span>
+          Follow Updates on Discord <span>{iDiscord}</span>
         </a>
       </div>
     </HeaderStyled>
@@ -75,6 +80,16 @@ const HeaderStyled = styled.div`
     display: flex;
     gap: 0.5rem;
     justify-content: space-between;
+
+    > div.nav_items {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+
+      > span {
+        cursor: pointer;
+      }
+    }
   }
 
   > div.links {
@@ -90,6 +105,11 @@ const HeaderStyled = styled.div`
 
       &:hover {
         background-color: var(--underlay2);
+      }
+
+      &#discord,
+      &#discord * {
+        color: var(--colorDiscord);
       }
 
       > span {

@@ -21,9 +21,16 @@ const Metadata: FC<MetadataProps> = ({ metadata }): JSX.Element => {
       </div>
 
       <div>
-        <p className="label">Fee</p>
+        <p className="label">Transaction Fee</p>
         <p className="value">
           {metadata?.fee ? (metadata.fee / E8S).toFixed(4) : "..."}
+        </p>
+      </div>
+
+      <div>
+        <p className="label">Decimals</p>
+        <p className="value">
+          {metadata?.fee ? String(metadata.decimals) : "..."}
         </p>
       </div>
 
@@ -41,11 +48,11 @@ const Metadata: FC<MetadataProps> = ({ metadata }): JSX.Element => {
 
 const MetadataStyled = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
   gap: 0.5rem;
 
   > div {
-    padding: 1rem;
+    padding: 0.5rem 0.75rem;
     background-color: var(--underlay1);
 
     > p.label {

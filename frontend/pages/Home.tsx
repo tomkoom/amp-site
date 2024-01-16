@@ -11,6 +11,7 @@ export interface Metadata {
   name: string
   symbol: string
   fee: number
+  decimals: number
   total_supply: number
 }
 
@@ -35,18 +36,21 @@ const Home: FC = (): JSX.Element => {
 
   const getMetadata = async (): Promise<void> => {
     if (!token) return
-    const metadata = {
+    const metadata: Metadata = {
       name: "",
       symbol: "",
       fee: 0,
+      decimals: 0,
       total_supply: 0,
     }
     await token.icrc1_name().then((res) => (metadata.name = res))
     await token.icrc1_symbol().then((res) => (metadata.symbol = res))
     await token.icrc1_fee().then((res) => (metadata.fee = Number(res)))
+    await token.icrc1_decimals().then((res) => (metadata.decimals = res))
     await token
       .icrc1_total_supply()
       .then((res) => (metadata.total_supply = Number(res)))
+
     setMetadata(metadata)
   }
 

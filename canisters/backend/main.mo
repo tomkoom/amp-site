@@ -12,6 +12,7 @@ import Ledger "./ledger";
 actor {
 
   let tokenCanister = "fq7md-ayaaa-aaaag-abpea-cai";
+  // let icpCanisterCanisterLocal = "";
   // let tokenCanisterLocal = "";
   let token = actor (tokenCanister) : Ledger.Self;
   let nodeId = "";
