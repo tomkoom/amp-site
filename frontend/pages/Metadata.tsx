@@ -38,9 +38,14 @@ const Metadata: FC<MetadataProps> = ({ metadata }): JSX.Element => {
         <p className="label">Total Supply</p>
         <p className="value">
           {metadata?.total_supply
-            ? (metadata.total_supply / E8S).toFixed(8)
+            ? (metadata.total_supply / E8S).toFixed(4)
             : "..."}
         </p>
+      </div>
+
+      <div>
+        <p className="label">Initial Supply</p>
+        <p className="value">{metadata?.total_supply ? "1b" : "..."}</p>
       </div>
     </MetadataStyled>
   )
@@ -54,6 +59,7 @@ const MetadataStyled = styled.div`
   > div {
     padding: 0.5rem 0.75rem;
     background-color: var(--underlay1);
+    border-radius: 0.5rem;
 
     > p.label {
       color: var(--tertiaryColor);
@@ -61,7 +67,8 @@ const MetadataStyled = styled.div`
       font-weight: var(--fwMedium);
     }
 
-    > p.label {
+    > p.value {
+      font-size: var(--fs5);
       font-weight: var(--fwMedium);
     }
   }

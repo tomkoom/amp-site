@@ -20,7 +20,7 @@ const Header: FC = (): JSX.Element => {
       <div className="nav">
         <div className="nav_items">
           <h1>{PROJECT_NAME}</h1>
-          <span>explorer</span>
+          <span>scan</span>
         </div>
 
         <button onClick={changeTheme}>
@@ -52,15 +52,15 @@ const Header: FC = (): JSX.Element => {
           target="_blank"
           rel="noreferrer noopener"
         >
-          Token Params <span>{iExternalLink}</span>
+          <span>{iExternalLink}</span> Token Params
         </a>
         <a
-          id="discord"
+          // id="discord"
           href="https://discord.gg/pvaBPqcwA2"
           target="_blank"
           rel="noreferrer noopener"
         >
-          Follow Updates on Discord <span>{iDiscord}</span>
+          <span>{iDiscord}</span> Follow
         </a>
       </div>
     </HeaderStyled>
@@ -81,6 +81,10 @@ const HeaderStyled = styled.div`
     gap: 0.5rem;
     justify-content: space-between;
 
+    * {
+      font-size: var(--fs6);
+    }
+
     > div.nav_items {
       display: flex;
       align-items: center;
@@ -94,27 +98,35 @@ const HeaderStyled = styled.div`
 
   > div.links {
     display: flex;
-    align-items: stretch;
+    align-items: center;
     gap: 0.5rem;
 
     > a {
-      flex: 1;
-      padding: 1rem;
-      background-color: var(--underlay1);
+      height: 3rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: var(--fs7);
+      font-weight: var(--fwBold);
+      color: var(--background);
+      background-color: var(--primaryColor);
+      padding: 0 0.75rem;
+      border-radius: 1.5rem;
       transition: var(--transition1);
 
       &:hover {
-        background-color: var(--underlay2);
+        background-color: var(--tertiaryColor);
       }
 
-      &#discord,
+      /* &#discord,
       &#discord * {
         color: var(--colorDiscord);
-      }
+      } */
 
       > span {
-        font-size: 0.8rem;
-        color: var(--tertiaryColor);
+        font-size: var(--fs7);
+        opacity: 70%;
+        /* color: var(--tertiaryColor); */
       }
     }
   }

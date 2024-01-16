@@ -5,7 +5,7 @@ import { AnonymousIdentity, HttpAgent, Actor } from "@dfinity/agent"
 import { idlFactory } from "../idl/icrc1_ledger"
 import { _SERVICE } from "../idl/icrc1_ledger_types"
 import { HOST_IC, MY_LEDGER_CANISTER_ID } from "../constants/_index"
-import { Footer, Header, Metadata } from "./_index"
+import { Description, Footer, Header, Metadata } from "./_index"
 
 export interface Metadata {
   name: string
@@ -68,6 +68,7 @@ const Home: FC = (): JSX.Element => {
       <div className="main">
         <Header />
         <Metadata metadata={metadata} />
+        <Description />
       </div>
 
       <Footer />
@@ -78,7 +79,6 @@ const Home: FC = (): JSX.Element => {
 const HomeStyled = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 1rem;
   color: var(--primaryColor);
   background-color: var(--background);
   padding: 1rem;
@@ -87,12 +87,12 @@ const HomeStyled = styled.div`
   min-height: 100vh;
 
   > div.main {
-    /* footer at the bottom */
-    flex-grow: 1;
-
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 2rem;
+
+    /* footer at the bottom */
+    flex-grow: 1;
   }
 `
 

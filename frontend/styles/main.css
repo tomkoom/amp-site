@@ -3,11 +3,21 @@
   padding: 0;
   margin: 0;
   font-family: var(--fontFamily);
-  font-size: 20px; /* root font size */
+  font-size: 16px; /* root font size */
 }
 
-p {
+p,
+li,
+a,
+span {
+  font-size: var(--fs6);
   line-height: 150%;
+}
+
+ul,
+li {
+  padding: 0;
+  margin: 0;
 }
 
 a {
