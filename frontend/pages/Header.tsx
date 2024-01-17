@@ -1,6 +1,6 @@
 import React, { FC } from "react"
 import { styled } from "styled-components"
-import { PROJECT_NAME } from "../constants/_index"
+import { PROJECT_NAME, CANDID_URL, DISCORD_URL } from "../constants/_index"
 import { iExternalLink, iDiscord } from "../components/icons/Icons"
 
 // state
@@ -21,6 +21,9 @@ const Header: FC = (): JSX.Element => {
         <div className="nav_items">
           <h1>{PROJECT_NAME}</h1>
           <span>scan</span>
+          <a href={CANDID_URL} target="_blank" rel="noreferrer noopener">
+            candid
+          </a>
         </div>
 
         <button onClick={changeTheme}>
@@ -47,20 +50,9 @@ const Header: FC = (): JSX.Element => {
       </p>
 
       <div className="links">
-        <a
-          href="https://a4gq6-oaaaa-aaaab-qaa4q-cai.raw.ic0.app/?id=fq7md-ayaaa-aaaag-abpea-cai"
-          target="_blank"
-          rel="noreferrer noopener"
-        >
-          <span>{iExternalLink}</span> Token Params
-        </a>
-        <a
-          // id="discord"
-          href="https://discord.gg/pvaBPqcwA2"
-          target="_blank"
-          rel="noreferrer noopener"
-        >
-          <span>{iDiscord}</span> Follow
+        <a href={DISCORD_URL} target="_blank" rel="noreferrer noopener">
+          <span className="icon">{iDiscord}</span>
+          <span className="text">Follow</span>
         </a>
       </div>
     </HeaderStyled>
@@ -99,34 +91,37 @@ const HeaderStyled = styled.div`
   > div.links {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    justify-content: flex-start;
 
     > a {
-      height: 3rem;
+      height: 2.75rem;
+      padding: 0 0.75rem;
       display: flex;
       align-items: center;
-      gap: 0.5rem;
-      font-size: var(--fs7);
-      font-weight: var(--fwBold);
+      gap: 0.75rem;
       color: var(--background);
       background-color: var(--primaryColor);
-      padding: 0 0.75rem;
-      border-radius: 1.5rem;
+      border-radius: 0.5rem;
       transition: var(--transition1);
 
       &:hover {
         background-color: var(--tertiaryColor);
       }
 
-      /* &#discord,
-      &#discord * {
-        color: var(--colorDiscord);
-      } */
-
-      > span {
+      > span.icon {
+        width: 1rem;
+        height: 1rem;
+        display: grid;
+        place-items: center;
         font-size: var(--fs7);
         opacity: 70%;
-        /* color: var(--tertiaryColor); */
+      }
+
+      > span.text {
+        margin-top: 0.25rem;
+        font-size: var(--fs7);
+        font-weight: var(--fwBold);
+        line-height: 100%;
       }
     }
   }

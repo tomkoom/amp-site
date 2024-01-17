@@ -68,7 +68,7 @@ const MetadataStyled = styled.div`
     }
 
     > p.value {
-      font-size: var(--fs5);
+
       font-weight: var(--fwMedium);
     }
   }

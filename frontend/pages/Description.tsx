@@ -1,5 +1,6 @@
 import React, { FC } from "react"
 import { styled } from "styled-components"
+import { LIQUIDITY_POOL_URL } from "../constants/_index"
 
 const Description: FC = (): JSX.Element => {
   return (
@@ -7,13 +8,13 @@ const Description: FC = (): JSX.Element => {
       <h2>Tokenomics</h2>
       <ul>
         <li>
-          50% ET paired with 500 ICP allocated to initialize liquidity pool on{" "}
+          50% ET paired with 500 ICP allocated to initialize{" "}
           <a
-            href="https://app.icpswap.com/swap/liquidity/add/ryjl3-tyaaa-aaaaa-aaaba-cai/fq7md-ayaaa-aaaag-abpea-cai/3000"
+            href={LIQUIDITY_POOL_URL}
             target="_blank"
             rel="noreferrer noopener"
           >
-            ICPSwap
+            liquidity pool
           </a>
         </li>
         <li>50% ET: airdrop, incentives, marketing, fund</li>

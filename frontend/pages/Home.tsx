@@ -4,7 +4,7 @@ import { Principal } from "@dfinity/principal"
 import { AnonymousIdentity, HttpAgent, Actor } from "@dfinity/agent"
 import { idlFactory } from "../idl/icrc1_ledger"
 import { _SERVICE } from "../idl/icrc1_ledger_types"
-import { HOST_IC, MY_LEDGER_CANISTER_ID } from "../constants/_index"
+import { HOST_IC, TOKEN_LEDGER_ID } from "../constants/_index"
 import { Description, Footer, Header, Metadata } from "./_index"
 
 export interface Metadata {
@@ -29,7 +29,7 @@ const Home: FC = (): JSX.Element => {
     setToken(
       Actor.createActor(idlFactory, {
         agent,
-        canisterId: Principal.fromText(MY_LEDGER_CANISTER_ID),
+        canisterId: Principal.fromText(TOKEN_LEDGER_ID),
       }),
     )
   }
