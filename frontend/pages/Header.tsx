@@ -1,7 +1,7 @@
 import React, { FC } from "react"
 import { styled } from "styled-components"
 import { PROJECT_NAME, CANDID_URL, DISCORD_URL } from "../constants/_index"
-import { iExternalLink, iDiscord } from "../components/icons/Icons"
+import { iDiscord } from "../components/icons/Icons"
 
 // state
 import { useAppDispatch, useAppSelector } from "../hooks/useRedux"
