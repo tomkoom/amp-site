@@ -70,7 +70,7 @@ const HeaderStyled = styled.div`
       transition: var(--transition1);
 
       &:hover {
-        background-color: var(--tertiaryColor);
+        background-color: var(--secondaryColor);
       }
 
       > span.icon {

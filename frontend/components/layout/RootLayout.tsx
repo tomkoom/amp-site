@@ -58,7 +58,8 @@ const RootLayout: FC = (): JSX.Element => {
   }
 
   const getTransactions = async (): Promise<void> => {
-    await token.get_transactions({ start: 0n, length: 1000n }).then((res) => {
+    const arg = { start: BigInt(0), length: BigInt(1000) }
+    await token.get_transactions(arg).then((res) => {
       const serialized = serializeBigint(res.transactions)
       dispatch(setTransactions(serialized))
     })

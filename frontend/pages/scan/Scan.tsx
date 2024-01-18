@@ -11,9 +11,6 @@ const Scan: FC = (): JSX.Element => {
   return (
     <ScanStyled>
       <h2>Latest Transactions</h2>
-      {/* <pre>
-        <code>{JSON.stringify([...transactions].reverse(), null, 2)}</code>
-      </pre> */}
 
       {transactions.length === 0 && <p>...</p>}
       <ul>
@@ -24,7 +21,7 @@ const Scan: FC = (): JSX.Element => {
 
           return (
             <li key={String(t.timestamp)}>
-              <p>kind: {t.kind}</p>
+              <p>type: {t.kind}</p>
               <p>timestamp: {timestamp}</p>
               <p>to: {to}</p>
               <p>from: {from}</p>
