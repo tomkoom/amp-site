@@ -8,11 +8,13 @@ import { idlFactory } from "../../idl/icrc1_ledger"
 import { _SERVICE } from "../../idl/icrc1_ledger_types"
 import { HOST_IC, TOKEN_LEDGER_ID } from "../../constants/_index"
 import { Metadata as M } from "../../types/_index"
+import { serializeBigint } from "../../utils/serializeBigint"
 
 // state
 import { useAppSelector, useAppDispatch } from "../../hooks/useRedux"
 import { selectTheme, setTheme } from "../../state/theme"
 import { setMetadata } from "../../state/metadata"
+import { setTransactions } from "../../state/transactions"
 
 const RootLayout: FC = (): JSX.Element => {
   const dispatch = useAppDispatch()
@@ -55,6 +57,13 @@ const RootLayout: FC = (): JSX.Element => {
     dispatch(setMetadata(metadata))
   }
 
+  const getTransactions = async (): Promise<void> => {
+    await token.get_transactions({ start: 0n, length: 1000n }).then((res) => {
+      const serialized = serializeBigint(res.transactions)
+      dispatch(setTransactions(serialized))
+    })
+  }
+
   useEffect(() => {
     initLedger()
   }, [])
@@ -62,6 +71,7 @@ const RootLayout: FC = (): JSX.Element => {
   useEffect(() => {
     if (!token) return
     getMetadata()
+    getTransactions()
   }, [token])
 
   // theme

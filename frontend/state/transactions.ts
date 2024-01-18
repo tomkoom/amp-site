@@ -2,18 +2,18 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit"
 import type { RootState } from "./_store"
 
 interface TransactionsState {
-  transactions: string
+  transactions: any
 }
 
 const initialState: TransactionsState = {
-  transactions: "",
+  transactions: [],
 }
 
 const transactions = createSlice({
   name: "transactions",
   initialState,
   reducers: {
-    setTransactions(state, { payload }: PayloadAction<string>) {
+    setTransactions(state, { payload }: PayloadAction<any>) {
       state.transactions = payload
     },
   },
