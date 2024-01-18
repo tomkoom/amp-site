@@ -2,22 +2,15 @@ import React, { FC, useState, useEffect } from "react"
 import { styled } from "styled-components"
 import { Principal } from "@dfinity/principal"
 import { AnonymousIdentity, HttpAgent, Actor } from "@dfinity/agent"
-import { idlFactory } from "../idl/icrc1_ledger"
-import { _SERVICE } from "../idl/icrc1_ledger_types"
-import { HOST_IC, TOKEN_LEDGER_ID } from "../constants/_index"
-import { Description, Footer, Header, Metadata } from "./_index"
-
-export interface Metadata {
-  name: string
-  symbol: string
-  fee: number
-  decimals: number
-  total_supply: number
-}
+import { idlFactory } from "../../idl/icrc1_ledger"
+import { _SERVICE } from "../../idl/icrc1_ledger_types"
+import { HOST_IC, TOKEN_LEDGER_ID } from "../../constants/_index"
+import { Description, Header, Metadata } from "./_index"
+import { Metadata as M } from "frontend/types/_index"
 
 const Home: FC = (): JSX.Element => {
   const [token, setToken] = useState<_SERVICE>()
-  const [metadata, setMetadata] = useState<Metadata>()
+  const [metadata, setMetadata] = useState<M>()
 
   const initLedger = async (): Promise<void> => {
     const agentOptions = {
@@ -36,7 +29,7 @@ const Home: FC = (): JSX.Element => {
 
   const getMetadata = async (): Promise<void> => {
     if (!token) return
-    const metadata: Metadata = {
+    const metadata: M = {
       name: "",
       symbol: "",
       fee: 0,
@@ -65,13 +58,9 @@ const Home: FC = (): JSX.Element => {
 
   return (
     <HomeStyled>
-      <div className="main">
-        <Header />
-        <Metadata metadata={metadata} />
-        <Description />
-      </div>
-
-      <Footer />
+      <Header />
+      <Metadata metadata={metadata} />
+      <Description />
     </HomeStyled>
   )
 }
@@ -79,21 +68,7 @@ const Home: FC = (): JSX.Element => {
 const HomeStyled = styled.div`
   display: flex;
   flex-direction: column;
-  color: var(--primaryColor);
-  background-color: var(--background);
-  padding: 1rem;
-
-  /* footer at the bottom */
-  min-height: 100vh;
-
-  > div.main {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-
-    /* footer at the bottom */
-    flex-grow: 1;
-  }
+  gap: 2rem;
 `
 
 export default Home

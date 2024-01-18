@@ -1,58 +1,23 @@
 import React, { FC } from "react"
 import { styled } from "styled-components"
-import { PROJECT_NAME, CANDID_URL, DISCORD_URL } from "../constants/_index"
-import { iDiscord } from "../components/icons/Icons"
-
-// state
-import { useAppDispatch, useAppSelector } from "../hooks/useRedux"
-import { setTheme, selectTheme } from "../state/theme"
+import { PROJECT_NAME, DISCORD_URL } from "../../constants/_index"
+import { iDiscord } from "../../components/icons/Icons"
 
 const Header: FC = (): JSX.Element => {
-  const dispatch = useAppDispatch()
-  const theme = useAppSelector(selectTheme)
-
-  const changeTheme = (): void => {
-    dispatch(setTheme(theme === "light" ? "dark" : "light"))
-  }
-
   return (
     <HeaderStyled>
-      <div className="nav">
-        <div className="nav_items">
-          <h1>{PROJECT_NAME}</h1>
-          <span>scan</span>
-          <a href={CANDID_URL} target="_blank" rel="noreferrer noopener">
-            candid
-          </a>
-        </div>
-
-        <button onClick={changeTheme}>
-          <span
-            style={theme === "light" ? { textDecoration: "underline" } : null}
-          >
-            light
-          </span>
-          /
-          <span
-            style={theme === "dark" ? { textDecoration: "underline" } : null}
-          >
-            dark
-          </span>
-        </button>
-      </div>
-
       <p className="description">
-        {PROJECT_NAME} is a social money/payments token on the Internet
-        Computer. It is experimental at its initial stage because there is no
-        defined roadmap and its value is determined by the community's
-        commitment, how many projects it's been integrated into and how many
-        utilities it has. It is distributed through the airdrops and incentives.
+        {PROJECT_NAME} is a social payments token on the Internet Computer. It
+        is experimental at its initial stage because there is no defined roadmap
+        and its value is determined by the community's commitment, how many
+        projects it's been integrated into and how many utilities it has. It is
+        distributed through the airdrops and incentives.
       </p>
 
       <div className="links">
         <a href={DISCORD_URL} target="_blank" rel="noreferrer noopener">
           <span className="icon">{iDiscord}</span>
-          <span className="text">Follow</span>
+          <span className="text">Join Community</span>
         </a>
       </div>
     </HeaderStyled>

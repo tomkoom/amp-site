@@ -1,7 +1,5 @@
 // pages
 
-export { default as Description } from "./Description"
-export { default as Footer } from "./Footer"
-export { default as Header } from "./Header"
-export { default as Home } from "./Home"
-export { default as Metadata } from "./Metadata"
+export { default as Home } from "./home/Home"
+export { default as Scan } from "./scan/Scan"
+

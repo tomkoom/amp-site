@@ -1,6 +1,6 @@
 import React, { FC } from "react"
 import { styled } from "styled-components"
-import { PROJECT_NAME, GITHUB_URL, DISCORD_URL } from "../constants/_index"
+import { PROJECT_NAME, GITHUB_URL, DISCORD_URL } from "../../constants/_index"
 
 const Footer: FC = (): JSX.Element => {
   const d = new Date()

@@ -1,7 +1,7 @@
 import React, { FC } from "react"
 import { styled } from "styled-components"
-import { Metadata as M } from "./Home"
-import { E8S } from "../constants/_index"
+import { Metadata as M } from "frontend/types/_index"
+import { E8S } from "../../constants/_index"
 
 interface MetadataProps {
   metadata: M
@@ -68,7 +68,6 @@ const MetadataStyled = styled.div`
     }
 
     > p.value {
-
       font-weight: var(--fwMedium);
     }
   }

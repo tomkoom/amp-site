@@ -1,6 +1,6 @@
 import React, { FC } from "react"
 import { styled } from "styled-components"
-import { LIQUIDITY_POOL_URL } from "../constants/_index"
+import { LIQUIDITY_POOL_URL } from "../../constants/_index"
 
 const Description: FC = (): JSX.Element => {
   return (
