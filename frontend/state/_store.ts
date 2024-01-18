@@ -3,12 +3,16 @@ import { configureStore } from "@reduxjs/toolkit"
 import template from "./_template"
 import loading from "./loading"
 import theme from "./theme"
+import transactions from "./transactions"
+import metadata from "./metadata"
 
 export const store = configureStore({
   reducer: {
     template,
     loading,
     theme,
+    transactions,
+    metadata,
   },
 })
 

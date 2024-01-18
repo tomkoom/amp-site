@@ -1,13 +1,14 @@
 import React, { FC } from "react"
 import { styled } from "styled-components"
-import { Metadata as M } from "frontend/types/_index"
 import { E8S } from "../../constants/_index"
 
-interface MetadataProps {
-  metadata: M
-}
+// state
+import { useAppSelector } from "../../hooks/useRedux"
+import { selectMetadata } from "../../state/metadata"
 
-const Metadata: FC<MetadataProps> = ({ metadata }): JSX.Element => {
+const Metadata: FC = (): JSX.Element => {
+  const metadata = useAppSelector(selectMetadata)
+
   return (
     <MetadataStyled>
       <div>
