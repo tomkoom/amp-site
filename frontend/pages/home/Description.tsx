@@ -10,7 +10,7 @@ const Description: FC = (): JSX.Element => {
         <li>
           50% ET paired with 500 ICP allocated to initialize{" "}
           <a
-            href={LIQUIDITY_POOL_URL}
+            href="#"
             target="_blank"
             rel="noreferrer noopener"
           >

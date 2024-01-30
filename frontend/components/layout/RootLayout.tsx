@@ -7,17 +7,17 @@ import { AnonymousIdentity, HttpAgent, Actor } from "@dfinity/agent"
 import { idlFactory } from "../../idl/icrc1_ledger"
 import { _SERVICE } from "../../idl/icrc1_ledger_types"
 import { HOST_IC, TOKEN_LEDGER_ID } from "../../constants/_index"
-import { Metadata as M } from "../../types/_index"
-import { serializeBigint } from "../../utils/serializeBigint"
+
+// hooks
+import { useToken } from "../../hooks/_index"
 
 // state
 import { useAppSelector, useAppDispatch } from "../../hooks/useRedux"
 import { selectTheme, setTheme } from "../../state/theme"
-import { setMetadata } from "../../state/metadata"
-import { setTransactions } from "../../state/transactions"
 
 const RootLayout: FC = (): JSX.Element => {
   const dispatch = useAppDispatch()
+  const { refreshMetadata, refreshTransactions } = useToken()
   const [token, setToken] = useState<_SERVICE>()
   const theme = useAppSelector(selectTheme)
 
@@ -36,43 +36,14 @@ const RootLayout: FC = (): JSX.Element => {
     )
   }
 
-  const getMetadata = async (): Promise<void> => {
-    if (!token) return
-    const metadata: M = {
-      name: "",
-      symbol: "",
-      fee: 0,
-      decimals: 0,
-      total_supply: 0,
-    }
-
-    await token.icrc1_name().then((res) => (metadata.name = res))
-    await token.icrc1_symbol().then((res) => (metadata.symbol = res))
-    await token.icrc1_fee().then((res) => (metadata.fee = Number(res)))
-    await token.icrc1_decimals().then((res) => (metadata.decimals = res))
-    await token
-      .icrc1_total_supply()
-      .then((res) => (metadata.total_supply = Number(res)))
-
-    dispatch(setMetadata(metadata))
-  }
-
-  const getTransactions = async (): Promise<void> => {
-    const arg = { start: BigInt(0), length: BigInt(1000) }
-    await token.get_transactions(arg).then((res) => {
-      const serialized = serializeBigint(res.transactions)
-      dispatch(setTransactions(serialized))
-    })
-  }
-
   useEffect(() => {
     initLedger()
   }, [])
 
   useEffect(() => {
     if (!token) return
-    getMetadata()
-    getTransactions()
+    refreshMetadata(token)
+    refreshTransactions(token)
   }, [token])
 
   // theme
