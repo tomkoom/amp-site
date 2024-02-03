@@ -1,6 +1,6 @@
 import React, { FC } from "react"
 import { styled } from "styled-components"
-import { PROJECT_NAME, CANDID_URL } from "../../../constants/_index"
+import { PROJECT_NAME, CANDID_URL, SCAN_URL } from "../../../constants/_index"
 import { NavLink } from "react-router-dom"
 
 // state
@@ -22,10 +22,13 @@ const Nav: FC = (): JSX.Element => {
           <h1>{PROJECT_NAME}</h1>
         </NavLink>
 
-        <NavLink to="/scan">scan</NavLink>
-
+        {/* <NavLink to="/scan">scan</NavLink> */}
         <a href={CANDID_URL} target="_blank" rel="noreferrer noopener">
           candid
+        </a>
+
+        <a href={SCAN_URL} target="_blank" rel="noreferrer noopener">
+          scan
         </a>
       </div>
 
