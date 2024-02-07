@@ -4,16 +4,16 @@ import { PROJECT_NAME, CANDID_URL, SCAN_URL } from "../../../constants/_index"
 import { NavLink } from "react-router-dom"
 
 // state
-import { useAppDispatch, useAppSelector } from "../../../hooks/useRedux"
-import { setTheme, selectTheme } from "../../../state/theme"
+// import { useAppDispatch, useAppSelector } from "../../../hooks/useRedux"
+// import { setTheme, selectTheme } from "../../../state/theme"
 
 const Nav: FC = (): JSX.Element => {
-  const dispatch = useAppDispatch()
-  const theme = useAppSelector(selectTheme)
+  // const dispatch = useAppDispatch()
+  // const theme = useAppSelector(selectTheme)
 
-  const changeTheme = (): void => {
-    dispatch(setTheme(theme === "light" ? "dark" : "light"))
-  }
+  // const changeTheme = (): void => {
+  //   dispatch(setTheme(theme === "light" ? "dark" : "light"))
+  // }
 
   return (
     <NavStyled>
@@ -23,11 +23,21 @@ const Nav: FC = (): JSX.Element => {
         </NavLink>
 
         {/* <NavLink to="/scan">scan</NavLink> */}
-        <a href={CANDID_URL} target="_blank" rel="noreferrer noopener">
+        <a
+          className="link"
+          href={CANDID_URL}
+          target="_blank"
+          rel="noreferrer noopener"
+        >
           candid
         </a>
 
-        <a href={SCAN_URL} target="_blank" rel="noreferrer noopener">
+        <a
+          className="link"
+          href={SCAN_URL}
+          target="_blank"
+          rel="noreferrer noopener"
+        >
           scan
         </a>
       </div>
@@ -68,8 +78,13 @@ const NavStyled = styled.div`
     align-items: center;
     gap: 1rem;
 
-    > span {
-      cursor: pointer;
+    > a.link {
+      color: var(--secondaryColor);
+      transition: var(--transition1);
+
+      &:hover {
+        color: var(--primaryColor);
+      }
     }
   }
 `

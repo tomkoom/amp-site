@@ -5,6 +5,7 @@
   font-family: var(--fontFamily);
   font-size: 16px; /* root font size */
   text-align: center;
+  cursor: pointer;
 }
 
 p,

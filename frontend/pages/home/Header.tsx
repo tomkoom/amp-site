@@ -25,7 +25,8 @@ const Header: FC = (): JSX.Element => {
 
         <p>
           the most #ic flexing token. No roadmap or plans, just have fun & see
-          how it goes. Init and managed by{" "}
+          how it goes.{" "}
+          {/* Init and managed by{" "}
           <a
             href="https://twitter.com/_tomkoom "
             target="_blank"
@@ -33,7 +34,8 @@ const Header: FC = (): JSX.Element => {
           >
             tomkoom
           </a>
-          . 50% {TOKEN_SYMBOL} paired with 500 ICP allocated to init liquidity
+          . */}
+          50% {TOKEN_SYMBOL} paired with 500 ICP allocated to init liquidity
           pool, 50% {TOKEN_SYMBOL} reserved for airdrops, incentives, promo,
           team & fund. Canister id: {TOKEN_LEDGER_ID}
         </p>
@@ -60,7 +62,7 @@ const HeaderStyled = styled.div`
   gap: 0.5rem;
 
   > div.description {
-    max-width: 48rem;
+    max-width: 54rem;
 
     > div.title {
       display: flex;
@@ -114,7 +116,6 @@ const HeaderStyled = styled.div`
       gap: 1rem;
       color: var(--background);
       background-color: var(--primaryColor);
-      /* border-radius: 1.5rem; */
       transition: var(--transition1);
 
       &:hover {
