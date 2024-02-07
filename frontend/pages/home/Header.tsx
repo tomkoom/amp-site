@@ -34,7 +34,7 @@ const Header: FC = (): JSX.Element => {
             tomkoom
           </a>
           . 50% {TOKEN_SYMBOL} paired with 500 ICP allocated to init liquidity
-          pool, 50% {TOKEN_SYMBOL} reserved for airdrops, incentives, marketing,
+          pool, 50% {TOKEN_SYMBOL} reserved for airdrops, incentives, promo,
           team & fund. Canister id: {TOKEN_LEDGER_ID}
         </p>
       </div>

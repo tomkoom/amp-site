@@ -53,11 +53,14 @@ const Metadata: FC = (): JSX.Element => {
 }
 
 const MetadataStyled = styled.div`
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  flex-wrap: wrap;
   gap: 0.5rem;
 
   > div {
+    flex: 1;
     padding: 0.5rem 0.75rem;
     background-color: var(--background);
 
