@@ -59,8 +59,7 @@ const MetadataStyled = styled.div`
 
   > div {
     padding: 0.5rem 0.75rem;
-    background-color: var(--underlay1);
-    border-radius: 0.5rem;
+    background-color: var(--background);
 
     > p.label {
       color: var(--tertiaryColor);

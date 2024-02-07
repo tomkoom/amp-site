@@ -1,6 +1,7 @@
 export const HOST_IC = "https://icp0.io"
 export const E8S = 10 ** 8
-export const PROJECT_NAME = "et"
+export const PROJECT_NAME = "flex"
+export const TOKEN_SYMBOL = "FLEX"
 
 // token
 export const TOKEN_LEDGER_ID = "qk232-hqaaa-aaaag-aciia-cai"

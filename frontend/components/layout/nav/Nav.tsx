@@ -32,7 +32,7 @@ const Nav: FC = (): JSX.Element => {
         </a>
       </div>
 
-      <button onClick={changeTheme}>
+      {/* <button onClick={changeTheme}>
         <span
           style={theme === "light" ? { textDecoration: "underline" } : null}
         >
@@ -48,15 +48,16 @@ const Nav: FC = (): JSX.Element => {
         >
           dark
         </span>
-      </button>
+      </button> */}
     </NavStyled>
   )
 }
 
 const NavStyled = styled.div`
   display: flex;
+  justify-content: center;
   gap: 0.5rem;
-  justify-content: space-between;
+  /* justify-content: space-between; */
 
   * {
     font-size: var(--fs6);

@@ -17,9 +17,9 @@ const Footer: FC = (): JSX.Element => {
           discord
         </a>
 
-        <a href={GITHUB_URL} target="_blank" rel="noreferrer noopener">
+        {/* <a href={GITHUB_URL} target="_blank" rel="noreferrer noopener">
           github
-        </a>
+        </a> */}
       </div>
     </FooterStyled>
   )

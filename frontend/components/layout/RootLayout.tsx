@@ -76,7 +76,7 @@ const RootLayoutStyled = styled.div`
   display: flex;
   flex-direction: column;
   color: var(--primaryColor);
-  background-color: var(--background);
+  background-color: var(--black);
   padding: 1rem;
 
   /* footer at the bottom */
