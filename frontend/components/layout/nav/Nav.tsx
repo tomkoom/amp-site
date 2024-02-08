@@ -19,7 +19,7 @@ const Nav: FC = (): JSX.Element => {
     <NavStyled>
       <div className="nav_items">
         <NavLink to="/">
-          <h1>{PROJECT_NAME}</h1>
+          <h1>{PROJECT_NAME.toLowerCase()}</h1>
         </NavLink>
 
         {/* <NavLink to="/scan">scan</NavLink> */}

@@ -48,17 +48,17 @@ const RootLayout: FC = (): JSX.Element => {
 
   // theme
 
-  useEffect(() => {
-    const thm = JSON.parse(localStorage.getItem("theme"))
-    console.log(thm)
-    if (thm) {
-      dispatch(setTheme(thm))
-    }
-  }, [])
+  // useEffect(() => {
+  //   const thm = JSON.parse(localStorage.getItem("theme"))
+  //   console.log(thm)
+  //   if (thm) {
+  //     dispatch(setTheme(thm))
+  //   }
+  // }, [])
 
-  useEffect(() => {
-    localStorage.setItem("theme", JSON.stringify(theme))
-  }, [theme])
+  // useEffect(() => {
+  //   localStorage.setItem("theme", JSON.stringify(theme))
+  // }, [theme])
 
   return (
     <RootLayoutStyled className={theme === "" ? "dark" : theme}>

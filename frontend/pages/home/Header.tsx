@@ -2,11 +2,11 @@ import React, { FC } from "react"
 import { styled } from "styled-components"
 import {
   PROJECT_NAME,
-  DISCORD_URL,
   TOKEN_SYMBOL,
   TOKEN_LEDGER_ID,
+  SWAP_URL,
+  LP_STATS_URL,
 } from "../../constants/_index"
-// import { iDiscord } from "../../components/icons/Icons"
 import kid from "../../assets/kid.gif"
 
 const Header: FC = (): JSX.Element => {
@@ -35,21 +35,19 @@ const Header: FC = (): JSX.Element => {
             tomkoom
           </a>
           . */}
-          50% {TOKEN_SYMBOL} paired with 500 ICP allocated to init liquidity
-          pool, 50% {TOKEN_SYMBOL} reserved for airdrops, incentives, promo,
-          team & fund. Canister id: {TOKEN_LEDGER_ID}
+          50% {TOKEN_SYMBOL} paired with 500 ICP allocated to init{" "}
+          <a href={LP_STATS_URL} target="_blank" rel="noreferrer noopener">
+            liquidity pool
+          </a>
+          , 50% {TOKEN_SYMBOL} reserved for airdrops, incentives, promo, team &
+          fund. Canister id: {TOKEN_LEDGER_ID}
         </p>
       </div>
 
       <div className="links">
-        <a href={DISCORD_URL} target="_blank" rel="noreferrer noopener">
+        <a href={SWAP_URL} target="_blank" rel="noreferrer noopener">
           <span className="text">Get FLEX</span>
         </a>
-
-        {/* <a href={DISCORD_URL} target="_blank" rel="noreferrer noopener">
-          <span className="icon">{iDiscord}</span>
-          <span className="text">Join FLEX Army</span>
-        </a> */}
       </div>
     </HeaderStyled>
   )
@@ -122,18 +120,9 @@ const HeaderStyled = styled.div`
         background-color: var(--secondaryColor);
       }
 
-      > span.icon {
-        width: 1rem;
-        height: 1rem;
-        display: grid;
-        place-items: center;
-        font-size: var(--fs7);
-        opacity: 60%;
-      }
-
       > span.text {
         margin-top: 0.25rem;
-        font-size: var(--fs7);
+        /* font-size: var(--fs7); */
         font-weight: var(--fwBold);
         line-height: 100%;
       }
