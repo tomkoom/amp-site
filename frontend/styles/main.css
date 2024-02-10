@@ -16,10 +16,15 @@ span {
   line-height: 140%;
 }
 
-ul,
-li {
+ul {
   padding: 0;
   margin: 0;
+  list-style-type: none;
+}
+
+code {
+  font-family: "Courier New", Courier, monospace;
+  font-weight: var(--fwMedium);
 }
 
 a {

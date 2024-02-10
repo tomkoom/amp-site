@@ -5,42 +5,37 @@ import { LIQUIDITY_POOL_URL, TOKEN_SYMBOL } from "../../constants/_index"
 const Description: FC = (): JSX.Element => {
   return (
     <DescriptionStyled>
-      <p>
-        50% {TOKEN_SYMBOL} paired with 500 ICP allocated to init liquidity pool,
-        50% {TOKEN_SYMBOL} reserved for airdrops, incentives, marketing, team &
-        fund
-      </p>
-
-      {/* <h2>Tokenomics</h2>
+      <h3>Well-Known Accounts</h3>
       <ul>
         <li>
-          50% ET paired with 500 ICP allocated to initialize{" "}
-          <a
-            href="#"
-            target="_blank"
-            rel="noreferrer noopener"
-          >
-            liquidity pool
-          </a>
+          Minter & controller:{" "}
+          <code>
+            qacbl-dmvvz-7f4rd-qdkp2-drupw-qch3e-35tpx-xl6gh-my5bf-wndbh-xae
+          </code>
         </li>
-        <li>50% ET: airdrop, incentives, marketing, fund</li>
-      </ul> */}
+        <li>
+          Burn address:{" "}
+          <code>
+            qacbl-dmvvz-7f4rd-qdkp2-drupw-qch3e-35tpx-xl6gh-my5bf-wndbh-xae
+          </code>
+        </li>
+      </ul>
     </DescriptionStyled>
   )
 }
 
 const DescriptionStyled = styled.div`
-  > h2 {
+  > h3 {
     margin-bottom: 0.5rem;
-    font-size: var(--fs6);
+    font-size: var(--fs5);
   }
 
   ul {
-    margin-left: 0.75rem;
-
     > li {
-      a {
-        text-decoration: underline;
+      > code {
+        font-size: var(--fs6);
+        background-color: var(--underlay1);
+        padding: 0.1rem;
       }
     }
   }

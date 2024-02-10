@@ -6,9 +6,6 @@
 /* Inconsolata */
 @import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;500;700;900&display=swap");
 
-/* Alike Angular */
-@import url("https://fonts.googleapis.com/css2?family=Alike+Angular&display=swap");
-
 /* Gluten */
 @import url("https://fonts.googleapis.com/css2?family=Gluten:wght@400;500;700;900&display=swap");
 
@@ -55,19 +52,17 @@
   /* font-weight fw */
 
   --fwBlack: 900;
-  /* --fwExtraBold: 800; */
   --fwBold: 700;
-  /* --fwSemiBold: 600; */
   --fwMedium: 500;
   --fwRegular: 400;
 
   /* font-family */
 
-  --fontFamily: "Gluten", sans-serif;
+  --fontFamily: "Gluten", "Inconsolata", sans-serif;
   /* --fontFamily: "Gluten", cursive; */
-  /* --fontFamily: "Alike Angular", serif; */
   /* --fontFamily: "Inter", sans-serif; */
-  --monospace: "Inconsolata", monospace;
+  /* --monospace: "Inconsolata", monospace; */
+  --monospace: "Courier New", Courier, monospace;
 
   /* shadows */
 

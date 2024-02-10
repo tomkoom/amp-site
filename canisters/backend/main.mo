@@ -10,10 +10,7 @@ import T "./types";
 import Ledger "./ledger";
 
 actor {
-
-  let tokenCanister = "fq7md-ayaaa-aaaag-abpea-cai";
-  // let icpCanisterCanisterLocal = "";
-  // let tokenCanisterLocal = "";
+  let tokenCanister = "qk232-hqaaa-aaaag-aciia-cai";
   let token = actor (tokenCanister) : Ledger.Self;
   let nodeId = "";
   let adminId = "qacbl-dmvvz-7f4rd-qdkp2-drupw-qch3e-35tpx-xl6gh-my5bf-wndbh-xae";
@@ -46,7 +43,7 @@ actor {
   };
 
   public shared ({ caller }) func claim(discordUserId : T.DiscordUserId, principalId : Text, role : Text) : async ?Ledger.Result {
-    if (caller != Principal.fromText(nodeId)) return null;
+    assert (caller == Principal.fromText(nodeId));
     var user : T.User = { id = ""; claimed = false; claimTimestamp = null };
 
     if (role == "og1") {

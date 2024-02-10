@@ -1,6 +1,10 @@
 import React, { FC } from "react"
 import { styled } from "styled-components"
-import { PROJECT_NAME, GITHUB_URL, DISCORD_URL } from "../../constants/_index"
+import {
+  PROJECT_NAME,
+  TOKEN_UI_GITHUB_URL,
+  DISCORD_URL,
+} from "../../constants/_index"
 
 const Footer: FC = (): JSX.Element => {
   const d = new Date()
@@ -17,7 +21,7 @@ const Footer: FC = (): JSX.Element => {
           Discord
         </a>
 
-        <a href={GITHUB_URL} target="_blank" rel="noreferrer noopener">
+        <a href={TOKEN_UI_GITHUB_URL} target="_blank" rel="noreferrer noopener">
           GitHub
         </a>
       </div>
