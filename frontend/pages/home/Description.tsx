@@ -1,6 +1,7 @@
 import React, { FC } from "react"
 import { styled } from "styled-components"
-import { LIQUIDITY_POOL_URL, TOKEN_SYMBOL } from "../../constants/_index"
+import { LinkBtn } from "../../components/ui/btns/_index"
+import { DISCORD_URL } from "../../constants/_index"
 
 const Description: FC = (): JSX.Element => {
   return (
@@ -9,31 +10,42 @@ const Description: FC = (): JSX.Element => {
       <ul>
         <li>
           Minter & controller:{" "}
-          <code>
+          <span>
             qacbl-dmvvz-7f4rd-qdkp2-drupw-qch3e-35tpx-xl6gh-my5bf-wndbh-xae
-          </code>
+          </span>
         </li>
         <li>
           Burn address:{" "}
-          <code>
+          <span>
             qacbl-dmvvz-7f4rd-qdkp2-drupw-qch3e-35tpx-xl6gh-my5bf-wndbh-xae
-          </code>
+          </span>
         </li>
       </ul>
+
+      <LinkBtn
+        $type="secondary"
+        $text={"Join On Discord"}
+        href={DISCORD_URL}
+        target="_blank"
+        rel="noreferrer noopener"
+      />
     </DescriptionStyled>
   )
 }
 
 const DescriptionStyled = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+
   > h3 {
-    margin-bottom: 0.5rem;
     font-size: var(--fs5);
   }
 
   ul {
     > li {
-      > code {
-        font-size: var(--fs6);
+      > span {
         background-color: var(--underlay1);
         padding: 0.1rem;
       }

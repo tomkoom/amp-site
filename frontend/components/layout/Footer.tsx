@@ -31,6 +31,7 @@ const Footer: FC = (): JSX.Element => {
 
 const FooterStyled = styled.footer`
   margin-top: 2rem;
+  margin-bottom: 1rem;
   display: flex;
   align-items: center;
   justify-content: space-between;

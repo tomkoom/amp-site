@@ -24,7 +24,7 @@ ul {
 
 code {
   font-family: "Courier New", Courier, monospace;
-  font-weight: var(--fwMedium);
+  font-weight: var(--fwBold);
 }
 
 a {

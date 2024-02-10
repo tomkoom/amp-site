@@ -8,46 +8,39 @@ import {
   LP_STATS_URL,
 } from "../../constants/_index"
 import kid from "../../assets/kid.gif"
+import { LinkBtn } from "../../components/ui/btns/_index"
 
 const Header: FC = (): JSX.Element => {
   return (
     <HeaderStyled>
       <div className="description">
         <div className="title">
-          <div>
-            <img src={kid} alt="kid dancing" />
-            <img src={kid} alt="kid dancing" />
-            <img src={kid} alt="kid dancing" />
+          <div className="images">
+            <img src={kid} alt="kid flexing" />
           </div>
 
           <h2>{PROJECT_NAME}</h2>
         </div>
 
-        <p>
-          the most #ic flexing token. No roadmap or plans, just have fun & see
-          how it goes.{" "}
-          {/* Init and managed by{" "}
-          <a
-            href="https://twitter.com/_tomkoom "
-            target="_blank"
-            rel="noreferrer noopener"
-          >
-            tomkoom
-          </a>
-          . */}
-          50% {TOKEN_SYMBOL} paired with 500 ICP allocated to init{" "}
+        <p className="text">
+          The most #ic flexing token. No roadmap or plans, just have fun & see
+          how it goes. 50% {TOKEN_SYMBOL} paired with 500 ICP allocated to init{" "}
           <a href={LP_STATS_URL} target="_blank" rel="noreferrer noopener">
             liquidity pool
           </a>
           , 50% {TOKEN_SYMBOL} reserved for airdrops, incentives, promo, team &
-          fund. Canister id: {TOKEN_LEDGER_ID}
+          fund. Ledger id: {TOKEN_LEDGER_ID}
         </p>
       </div>
 
       <div className="links">
-        <a href={SWAP_URL} target="_blank" rel="noreferrer noopener">
-          <span className="text">Get FLEX</span>
-        </a>
+        <LinkBtn
+          $type={"primary"}
+          $text={"Get FLEX"}
+          href={SWAP_URL}
+          target="_blank"
+          rel="noreferrer noopener"
+        />
       </div>
     </HeaderStyled>
   )
@@ -68,25 +61,27 @@ const HeaderStyled = styled.div`
       align-items: center;
       gap: 1rem;
 
-      > div img {
-        max-width: 12rem;
-        width: 100%;
+      > div.images {
+        img {
+          max-width: 20rem;
+          width: 100%;
+        }
       }
 
       > h2 {
-        font-size: var(--fs5);
+        font-size: var(--fs4);
         line-height: 120%;
       }
     }
 
     > p,
     p * {
-      font-size: var(--fs5);
-      line-height: 120%;
+      font-size: var(--fs6);
+      line-height: 140%;
       color: var(--secondaryColor);
 
       a {
-        font-size: var(--fs5);
+        font-size: var(--fs6);
         color: var(--secondaryColor);
         text-decoration: underline;
         transition: var(--transition1);
@@ -122,7 +117,6 @@ const HeaderStyled = styled.div`
 
       > span.text {
         margin-top: 0.25rem;
-        /* font-size: var(--fs7); */
         font-weight: var(--fwBold);
         line-height: 100%;
       }
