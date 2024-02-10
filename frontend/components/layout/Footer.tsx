@@ -14,12 +14,12 @@ const Footer: FC = (): JSX.Element => {
 
       <div className="links">
         <a href={DISCORD_URL} target="_blank" rel="noreferrer noopener">
-          discord
+          Discord
         </a>
 
-        {/* <a href={GITHUB_URL} target="_blank" rel="noreferrer noopener">
-          github
-        </a> */}
+        <a href={GITHUB_URL} target="_blank" rel="noreferrer noopener">
+          GitHub
+        </a>
       </div>
     </FooterStyled>
   )
