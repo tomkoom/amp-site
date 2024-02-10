@@ -2,13 +2,12 @@ import React, { FC } from "react"
 import { styled } from "styled-components"
 import {
   PROJECT_NAME,
-  TOKEN_SYMBOL,
   TOKEN_LEDGER_ID,
   SWAP_URL,
   LP_STATS_URL,
-} from "../../constants/_index"
-import kid from "../../assets/kid.gif"
-import { LinkBtn } from "../../components/ui/btns/_index"
+} from "@/constants/_index"
+import kid from "@/assets/kid.gif"
+import { LinkBtn } from "@/components/ui/btns/_index"
 
 const Header: FC = (): JSX.Element => {
   return (
@@ -23,13 +22,13 @@ const Header: FC = (): JSX.Element => {
         </div>
 
         <p className="text">
-          The most #ic flexing token. No roadmap or plans, just have fun & see
-          how it goes. 50% {TOKEN_SYMBOL} paired with 500 ICP allocated to init{" "}
+          The most #ic flexing token. No roadmap or plans, just have fun & flex!
+          50% of tokens paired with 500 ICP allocated to init{" "}
           <a href={LP_STATS_URL} target="_blank" rel="noreferrer noopener">
             liquidity pool
           </a>
-          , 50% {TOKEN_SYMBOL} reserved for airdrops, incentives, promo, team &
-          fund. Ledger id: {TOKEN_LEDGER_ID}
+          , 50% reserved for airdrops, incentives, promo, team & fund. Ledger
+          id: {TOKEN_LEDGER_ID}
         </p>
       </div>
 
