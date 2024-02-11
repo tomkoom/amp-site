@@ -15,9 +15,9 @@ const Header: FC = (): JSX.Element => {
     <HeaderStyled>
       <div className="description">
         <div className="title">
-          <div className="images">
+          {/* <div className="images">
             <img src={kid} alt="kid flexing" />
-          </div>
+          </div> */}
 
           <h2>{PROJECT_NAME}</h2>
         </div>
@@ -60,6 +60,7 @@ const HeaderStyled = styled.div`
       flex-direction: column;
       align-items: center;
       gap: 1rem;
+      margin-top: 2rem;
 
       > div.images {
         img {
