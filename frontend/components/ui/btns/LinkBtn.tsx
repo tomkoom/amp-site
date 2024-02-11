@@ -9,7 +9,7 @@ interface LinkBtnProps extends AnchorHTMLAttributes<HTMLAnchorElement> {
 const LinkBtn: FC<LinkBtnProps> = ({ $type, $text, ...props }): JSX.Element => {
   return (
     <LinkBtnStyled $type={$type} {...props}>
-      <span>{$text}</span>
+      {$text}
     </LinkBtnStyled>
   )
 }
@@ -38,14 +38,10 @@ const LinkBtnStyled = styled.a<{ $type: "primary" | "secondary" }>`
   gap: 0.5rem;
   font-size: var(--fs6);
   font-weight: var(--fwBold);
-  padding: 0 0.65rem;
+  padding: 0 1rem;
   white-space: nowrap;
   border-radius: 1.5rem;
   transition: var(--transition1);
-
-  > span {
-    margin-top: 0.2rem;
-  }
 
   /* custom */
   color: ${(p) => colors[p.$type]};

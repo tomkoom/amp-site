@@ -2,6 +2,7 @@ import React, { FC } from "react"
 import { styled } from "styled-components"
 import {
   PROJECT_NAME,
+  TOKEN_SYMBOL,
   TOKEN_LEDGER_ID,
   SWAP_URL,
   LP_STATS_URL,
@@ -22,8 +23,8 @@ const Header: FC = (): JSX.Element => {
         </div>
 
         <p className="text">
-          The most #ic flexing token. No roadmap or plans, just have fun & flex!
-          50% of tokens paired with 500 ICP allocated to init{" "}
+          The most flexing #ic meme/social payments token. 50% of {TOKEN_SYMBOL}{" "}
+          paired with 500 ICP allocated to init{" "}
           <a href={LP_STATS_URL} target="_blank" rel="noreferrer noopener">
             liquidity pool
           </a>

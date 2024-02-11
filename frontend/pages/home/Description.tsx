@@ -23,7 +23,7 @@ const Description: FC = (): JSX.Element => {
       </ul>
 
       <LinkBtn
-        $type="secondary"
+        $type={"secondary"}
         $text={"Join On Discord"}
         href={DISCORD_URL}
         target="_blank"
@@ -45,9 +45,10 @@ const DescriptionStyled = styled.div`
 
   ul {
     > li {
+      line-height: 180%;
       > span {
         background-color: var(--underlay1);
-        padding: 0.1rem;
+        padding: 0.1rem 0.25rem;
       }
     }
   }
