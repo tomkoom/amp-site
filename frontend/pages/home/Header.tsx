@@ -63,8 +63,10 @@ const HeaderStyled = styled.div`
 
       > div.images {
         img {
-          max-width: 20rem;
-          width: 100%;
+          width: 8rem;
+          height: 8rem;
+          object-fit: cover;
+          border-radius: 50%;
         }
       }
 

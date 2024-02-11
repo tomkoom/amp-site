@@ -7,6 +7,9 @@ export const TOKEN_SYMBOL = "FLEX"
 export const TOKEN_LEDGER_ID = "qk232-hqaaa-aaaag-aciia-cai"
 export const CANDID_URL = `https://a4gq6-oaaaa-aaaab-qaa4q-cai.raw.ic0.app/?id=${TOKEN_LEDGER_ID}`
 export const LIQUIDITY_POOL_URL = `https://app.icpswap.com/swap/liquidity/add/ryjl3-tyaaa-aaaaa-aaaba-cai/${TOKEN_LEDGER_ID}/3000`
+export const VAULT_ID = "fq7md-ayaaa-aaaag-abpea-cai"
+export const MINTER =
+  "qacbl-dmvvz-7f4rd-qdkp2-drupw-qch3e-35tpx-xl6gh-my5bf-wndbh-xae"
 
 // links
 export const TOKEN_LEDGER_GITHUB_URL = "https://github.com/tomkoom/flex-ledger"

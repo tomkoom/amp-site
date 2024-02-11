@@ -3,8 +3,9 @@ import { styled } from "styled-components"
 import {
   PROJECT_NAME,
   TOKEN_UI_GITHUB_URL,
+  TOKEN_LEDGER_GITHUB_URL,
   DISCORD_URL,
-} from "../../constants/_index"
+} from "@/constants/_index"
 
 const Footer: FC = (): JSX.Element => {
   const d = new Date()
@@ -22,7 +23,15 @@ const Footer: FC = (): JSX.Element => {
         </a>
 
         <a href={TOKEN_UI_GITHUB_URL} target="_blank" rel="noreferrer noopener">
-          GitHub
+          GitHub UI
+        </a>
+
+        <a
+          href={TOKEN_LEDGER_GITHUB_URL}
+          target="_blank"
+          rel="noreferrer noopener"
+        >
+          GitHub Ledger
         </a>
       </div>
     </FooterStyled>

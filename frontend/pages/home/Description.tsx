@@ -1,7 +1,8 @@
 import React, { FC } from "react"
 import { styled } from "styled-components"
-import { LinkBtn } from "../../components/ui/btns/_index"
-import { DISCORD_URL } from "../../constants/_index"
+import { LinkBtn } from "@/components/ui/btns/_index"
+import { DISCORD_URL, VAULT_ID, MINTER } from "@/constants/_index"
+import kid from "@/assets/kid.gif"
 
 const Description: FC = (): JSX.Element => {
   return (
@@ -9,16 +10,13 @@ const Description: FC = (): JSX.Element => {
       <h3>Well-Known Accounts</h3>
       <ul>
         <li>
-          Minter & controller:{" "}
-          <span>
-            qacbl-dmvvz-7f4rd-qdkp2-drupw-qch3e-35tpx-xl6gh-my5bf-wndbh-xae
-          </span>
+          Minter & controller: <span>{MINTER}</span>
         </li>
         <li>
-          Burn address:{" "}
-          <span>
-            qacbl-dmvvz-7f4rd-qdkp2-drupw-qch3e-35tpx-xl6gh-my5bf-wndbh-xae
-          </span>
+          Burn address: <span>{MINTER}</span>
+        </li>
+        <li>
+          Vault canister: <span>{VAULT_ID}</span>
         </li>
       </ul>
 
@@ -29,6 +27,8 @@ const Description: FC = (): JSX.Element => {
         target="_blank"
         rel="noreferrer noopener"
       />
+
+      <img src={kid} alt="kid flexing" />
     </DescriptionStyled>
   )
 }
@@ -51,6 +51,13 @@ const DescriptionStyled = styled.div`
         padding: 0.1rem 0.25rem;
       }
     }
+  }
+
+  > img {
+    width: 4rem;
+    height: 4rem;
+    object-fit: cover;
+    border-radius: 50%;
   }
 `
 
