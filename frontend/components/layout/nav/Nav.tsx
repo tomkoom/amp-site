@@ -1,6 +1,11 @@
 import React, { FC } from "react"
 import { styled } from "styled-components"
-import { PROJECT_NAME, CANDID_URL, SCAN_URL } from "../../../constants/_index"
+import {
+  PROJECT_NAME,
+  CANDID_URL,
+  SCAN_URL,
+  WHITEPAPER_URL,
+} from "../../../constants/_index"
 import { NavLink } from "react-router-dom"
 
 // state
@@ -23,6 +28,15 @@ const Nav: FC = (): JSX.Element => {
         </NavLink>
 
         {/* <NavLink to="/scan">scan</NavLink> */}
+        <a
+          className="link"
+          href={WHITEPAPER_URL}
+          target="_blank"
+          rel="noreferrer noopener"
+        >
+          Whitepaper
+        </a>
+
         {/* <a
           className="link"
           href={CANDID_URL}

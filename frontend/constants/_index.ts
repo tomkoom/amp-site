@@ -19,3 +19,5 @@ export const SCAN_URL = `https://ic.house/token/${TOKEN_LEDGER_ID}`
 export const SWAP_URL = `https://app.icpswap.com/swap?input=ryjl3-tyaaa-aaaaa-aaaba-cai&output=${TOKEN_LEDGER_ID}`
 export const LP_STATS_URL =
   "https://info.icpswap.com/swap/pool/details/d7byr-vqaaa-aaaag-qddja-cai"
+export const WHITEPAPER_URL =
+  "https://tomkoom.notion.site/FLEX-whitepaper-draft-b749cb7536834f91a33c876db8748b52?pvs=4"
