@@ -7,7 +7,7 @@ import kid from "@/assets/kid.gif"
 const Description: FC = (): JSX.Element => {
   return (
     <DescriptionStyled>
-      <h3>Well-Known Accounts</h3>
+      {/* <h3>Well-Known Accounts</h3>
       <ul>
         <li>
           Minter & controller: <span>{MINTER}</span>
@@ -18,7 +18,7 @@ const Description: FC = (): JSX.Element => {
         <li>
           Vault canister: <span>{VAULT_ID}</span>
         </li>
-      </ul>
+      </ul> */}
 
       <LinkBtn
         $type={"secondary"}

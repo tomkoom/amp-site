@@ -6,7 +6,7 @@ const Home: FC = (): JSX.Element => {
   return (
     <HomeStyled>
       <Header />
-      <Metadata />
+      {/* <Metadata /> */}
       <Description />
     </HomeStyled>
   )

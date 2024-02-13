@@ -21,8 +21,10 @@ const Header: FC = (): JSX.Element => {
 
           <h2>{PROJECT_NAME}</h2>
         </div>
+        <p>The most flexing #ic meme/social payments token.</p>
+        <p>Under dev</p>
 
-        <p className="text">
+        {/* <p className="text">
           The most flexing #ic meme/social payments token. 50% of {TOKEN_SYMBOL}{" "}
           paired with 500 ICP allocated to init{" "}
           <a href={LP_STATS_URL} target="_blank" rel="noreferrer noopener">
@@ -30,10 +32,10 @@ const Header: FC = (): JSX.Element => {
           </a>
           , 50% reserved for airdrops, incentives, promo, team & fund. Ledger
           id: {TOKEN_LEDGER_ID}
-        </p>
+        </p> */}
       </div>
 
-      <div className="links">
+      {/* <div className="links">
         <LinkBtn
           $type={"primary"}
           $text={"Get FLEX"}
@@ -41,7 +43,7 @@ const Header: FC = (): JSX.Element => {
           target="_blank"
           rel="noreferrer noopener"
         />
-      </div>
+      </div> */}
     </HeaderStyled>
   )
 }

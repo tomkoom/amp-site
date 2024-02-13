@@ -23,7 +23,7 @@ const Nav: FC = (): JSX.Element => {
         </NavLink>
 
         {/* <NavLink to="/scan">scan</NavLink> */}
-        <a
+        {/* <a
           className="link"
           href={CANDID_URL}
           target="_blank"
@@ -39,7 +39,7 @@ const Nav: FC = (): JSX.Element => {
           rel="noreferrer noopener"
         >
           Scan
-        </a>
+        </a> */}
       </div>
 
       {/* <button onClick={changeTheme}>
