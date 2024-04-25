@@ -40,7 +40,6 @@ const LinkBtnStyled = styled.a<{ $type: "primary" | "secondary" }>`
   font-weight: var(--fwBold);
   padding: 0 1rem;
   white-space: nowrap;
-  border-radius: 1.5rem;
   transition: var(--transition1);
 
   /* custom */

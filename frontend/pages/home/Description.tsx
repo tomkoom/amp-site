@@ -1,34 +1,29 @@
 import React, { FC } from "react"
 import { styled } from "styled-components"
 import { LinkBtn } from "@/components/ui/btns/_index"
-import { DISCORD_URL, VAULT_ID, MINTER } from "@/constants/_index"
-import kid from "@/assets/kid.gif"
+import { DISCORD_URL, MINTER } from "@/constants/_index"
+import kid from "@/assets/flex.gif"
 
 const Description: FC = (): JSX.Element => {
   return (
     <DescriptionStyled>
-      {/* <h3>Well-Known Accounts</h3>
+      <h3>Well-Known Accounts</h3>
       <ul>
         <li>
-          Minter & controller: <span>{MINTER}</span>
+          <p className="label">Minter & burn address</p>
+          <p className="value">{MINTER}</p>
         </li>
-        <li>
-          Burn address: <span>{MINTER}</span>
-        </li>
-        <li>
-          Vault canister: <span>{VAULT_ID}</span>
-        </li>
-      </ul> */}
+      </ul>
 
       <LinkBtn
         $type={"secondary"}
-        $text={"Join On Discord"}
+        $text={"Join Discord"}
         href={DISCORD_URL}
         target="_blank"
         rel="noreferrer noopener"
       />
 
-      <img src={kid} alt="kid flexing" />
+      <img src={kid} alt="flex" />
     </DescriptionStyled>
   )
 }
@@ -44,18 +39,35 @@ const DescriptionStyled = styled.div`
   }
 
   ul {
+    display: flex;
+    align-items: stretch;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+
     > li {
-      line-height: 180%;
-      > span {
+      background-color: var(--background);
+      padding: 1rem;
+
+      > p {
+        text-align: left;
+      }
+
+      > p.label {
+        color: var(--tertiaryColor);
+        font-size: var(--fsText);
+        margin-bottom: 0.25rem;
+      }
+
+      > p.value {
         background-color: var(--underlay1);
-        padding: 0.1rem 0.25rem;
       }
     }
   }
 
   > img {
-    width: 4rem;
-    height: 4rem;
+    width: 6rem;
+    height: 6rem;
     object-fit: cover;
     border-radius: 50%;
   }

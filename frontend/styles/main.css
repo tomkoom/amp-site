@@ -5,7 +5,6 @@
   font-family: var(--fontFamily);
   font-size: 16px; /* root font size */
   text-align: center;
-  cursor: pointer;
 }
 
 p,
@@ -13,7 +12,7 @@ li,
 a,
 span {
   font-size: var(--fs6);
-  line-height: 140%;
+  line-height: 150%;
 }
 
 ul {

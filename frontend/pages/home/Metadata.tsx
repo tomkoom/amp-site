@@ -8,6 +8,7 @@ import { selectMetadata } from "../../state/metadata"
 
 const Metadata: FC = (): JSX.Element => {
   const metadata = useAppSelector(selectMetadata)
+  const initialSupply = 268_000_000
 
   return (
     <MetadataStyled>
@@ -46,7 +47,9 @@ const Metadata: FC = (): JSX.Element => {
 
       <div>
         <p className="label">Initial Supply</p>
-        <p className="value">{metadata?.total_supply ? "1b" : "..."}</p>
+        <p className="value">
+          {metadata?.total_supply ? initialSupply.toString() : "..."}
+        </p>
       </div>
     </MetadataStyled>
   )

@@ -5,7 +5,7 @@ import {
   CANDID_URL,
   SCAN_URL,
   WHITEPAPER_URL,
-} from "../../../constants/_index"
+} from "@/constants/_index"
 import { NavLink } from "react-router-dom"
 
 // state
@@ -28,14 +28,14 @@ const Nav: FC = (): JSX.Element => {
         </NavLink>
 
         {/* <NavLink to="/scan">scan</NavLink> */}
-        <a
+        {/* <a
           className="link"
           href={WHITEPAPER_URL}
           target="_blank"
           rel="noreferrer noopener"
         >
           Whitepaper
-        </a>
+        </a> */}
 
         {/* <a
           className="link"
@@ -81,7 +81,6 @@ const NavStyled = styled.div`
   display: flex;
   justify-content: center;
   gap: 0.5rem;
-  /* justify-content: space-between; */
 
   * {
     font-size: var(--fs6);
