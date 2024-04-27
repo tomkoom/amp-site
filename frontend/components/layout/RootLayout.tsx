@@ -7,19 +7,12 @@ import { AnonymousIdentity, HttpAgent, Actor } from "@dfinity/agent"
 import { idlFactory } from "../../idl/icrc1_ledger"
 import { _SERVICE } from "../../idl/icrc1_ledger_types"
 import { HOST_IC, TOKEN_LEDGER_ID } from "../../constants/_index"
-
-// hooks
-import { useToken } from "../../hooks/_index"
-
-// state
-import { useAppSelector, useAppDispatch } from "../../hooks/useRedux"
-import { selectTheme, setTheme } from "../../state/theme"
+import { useToken } from "@/hooks/_index"
 
 const RootLayout: FC = (): JSX.Element => {
-  const dispatch = useAppDispatch()
+  const theme = "dark"
   const { refreshMetadata, refreshTransactions } = useToken()
   const [token, setToken] = useState<_SERVICE>()
-  const theme = useAppSelector(selectTheme)
 
   const initLedger = async (): Promise<void> => {
     const agentOptions = {
@@ -48,20 +41,8 @@ const RootLayout: FC = (): JSX.Element => {
 
   // theme
 
-  // useEffect(() => {
-  //   const thm = JSON.parse(localStorage.getItem("theme"))
-  //   console.log(thm)
-  //   if (thm) {
-  //     dispatch(setTheme(thm))
-  //   }
-  // }, [])
-
-  // useEffect(() => {
-  //   localStorage.setItem("theme", JSON.stringify(theme))
-  // }, [theme])
-
   return (
-    <RootLayoutStyled className={theme === "" ? "dark" : theme}>
+    <RootLayoutStyled className={theme}>
       <Nav />
       <main className="main">
         <Outlet />

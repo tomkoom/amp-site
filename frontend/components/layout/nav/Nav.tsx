@@ -27,6 +27,8 @@ const Nav: FC = (): JSX.Element => {
           <h1>{PROJECT_NAME}</h1>
         </NavLink>
 
+        <NavLink to="/snapshot">Snapshot</NavLink>
+
         {/* <NavLink to="/scan">scan</NavLink> */}
         {/* <a
           className="link"

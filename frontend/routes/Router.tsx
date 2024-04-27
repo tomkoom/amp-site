@@ -7,12 +7,16 @@ import {
 
 // components
 import RootLayout from "../components/layout/RootLayout"
-import { Home, Scan } from "../pages/_index"
+import { Home, Scan, Snapshot } from "../pages/_index"
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<RootLayout />}>
       <Route index element={<Home />} />
+
+      <Route path="snapshot">
+        <Route index element={<Snapshot />} />
+      </Route>
 
       <Route path="scan">
         <Route index element={<Scan />} />

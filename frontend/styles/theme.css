@@ -17,7 +17,6 @@
 
 .dark {
   /* main */
-  --black: black;
   --primaryColor: var(--coolGray10);
   --primaryColorRgb: var(--coolGray10Rgb);
   --secondaryColor: var(--coolGray30);

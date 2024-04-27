@@ -1,14 +1,24 @@
 import React, { FC } from "react"
 import { styled } from "styled-components"
 import { LinkBtn } from "@/components/ui/btns/_index"
-import { DISCORD_URL, MINTER } from "@/constants/_index"
+import { DISCORD_URL, MINTER, LEDGER_ID } from "@/constants/_index"
 import kid from "@/assets/flex.gif"
 
 const Description: FC = (): JSX.Element => {
+  const ledgerUrl =
+    "https://dashboard.internetcomputer.org/canister/qn35o-kiaaa-aaaag-aciiq-cai"
+
   return (
     <DescriptionStyled>
       <h3>Well-Known Accounts</h3>
       <ul>
+        <li>
+          <p className="label">Ledger id</p>
+          <a className="value" href={ledgerUrl} target="_blank">
+            {LEDGER_ID}
+          </a>
+        </li>
+
         <li>
           <p className="label">Minter & burn address</p>
           <p className="value">{MINTER}</p>
@@ -59,8 +69,8 @@ const DescriptionStyled = styled.div`
         margin-bottom: 0.25rem;
       }
 
-      > p.value {
-        background-color: var(--underlay1);
+      > a.value {
+        text-decoration: underline;
       }
     }
   }

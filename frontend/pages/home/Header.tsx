@@ -3,13 +3,16 @@ import { styled } from "styled-components"
 import { PROJECT_NAME } from "@/constants/_index"
 
 const Header: FC = (): JSX.Element => {
+  const text =
+    "The most #ic flexing token. Peer-to-peer social payments & meme digital currency"
+
   return (
     <HeaderStyled>
       <div className="description">
         <div className="title">
           <h2>{PROJECT_NAME}</h2>
         </div>
-        <p>The most flexing #ic meme/social payments token</p>
+        <p>{text}</p>
       </div>
 
       {/* <div className="links">
@@ -60,12 +63,6 @@ const HeaderStyled = styled.div`
 
       &:hover {
         background-color: var(--secondaryColor);
-      }
-
-      > span.text {
-        margin-top: 0.25rem;
-        font-weight: var(--fwBold);
-        line-height: 100%;
       }
     }
   }

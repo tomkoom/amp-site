@@ -1,6 +1,7 @@
 import React, { FC } from "react"
 import { styled } from "styled-components"
 import { E8S } from "../../constants/_index"
+import { formatNumber } from "@/utils/formatNumber"
 
 // state
 import { useAppSelector } from "../../hooks/useRedux"
@@ -40,7 +41,7 @@ const Metadata: FC = (): JSX.Element => {
         <p className="label">Total Supply</p>
         <p className="value">
           {metadata?.total_supply
-            ? (metadata.total_supply / E8S).toFixed(4)
+            ? formatNumber(metadata.total_supply / E8S)
             : "..."}
         </p>
       </div>
@@ -48,7 +49,7 @@ const Metadata: FC = (): JSX.Element => {
       <div>
         <p className="label">Initial Supply</p>
         <p className="value">
-          {metadata?.total_supply ? initialSupply.toString() : "..."}
+          {metadata?.total_supply ? formatNumber(initialSupply) : "..."}
         </p>
       </div>
     </MetadataStyled>
