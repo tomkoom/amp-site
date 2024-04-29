@@ -5,14 +5,13 @@ import { PROJECT_NAME } from "@/constants/_index"
 const Header: FC = (): JSX.Element => {
   const text =
     "The most #ic flexing token. Peer-to-peer social payments & meme digital currency"
+  const text2 = "MEME & P2P CURRENCY ON THE INTERNET COMPUTER"
 
   return (
     <HeaderStyled>
       <div className="description">
-        <div className="title">
-          <h2>{PROJECT_NAME}</h2>
-        </div>
-        <p>{text}</p>
+        <h2>{PROJECT_NAME}</h2>
+        <p>{text2}</p>
       </div>
 
       {/* <div className="links">
@@ -35,11 +34,15 @@ const HeaderStyled = styled.div`
   gap: 0.5rem;
 
   > div.description {
-    > div.title {
-      > h2 {
-        font-size: var(--fs4);
-        line-height: 120%;
-      }
+    > h2 {
+      font-size: var(--fs3);
+      font-weight: var(--fwBlack);
+      line-height: 120%;
+    }
+
+    > p {
+      font-size: var(--fs5);
+      font-weight: var(--fwBold);
     }
   }
 

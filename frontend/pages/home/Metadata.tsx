@@ -24,7 +24,7 @@ const Metadata: FC = (): JSX.Element => {
       </div>
 
       <div>
-        <p className="label">Transaction Fee</p>
+        <p className="label">Tx Fee</p>
         <p className="value">
           {metadata?.fee ? (metadata.fee / E8S).toFixed(4) : "..."}
         </p>
