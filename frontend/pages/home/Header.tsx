@@ -34,10 +34,13 @@ const HeaderStyled = styled.div`
   gap: 0.5rem;
 
   > div.description {
+    margin: 2rem 0;
     > h2 {
-      font-size: var(--fs3);
-      font-weight: var(--fwBlack);
+      font-size: var(--fs1);
+      font-weight: var(--fwBold);
       line-height: 120%;
+      font-family: var(--highlightFont);
+      margin-bottom: 0.5rem;
     }
 
     > p {

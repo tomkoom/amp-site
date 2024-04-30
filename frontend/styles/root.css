@@ -9,6 +9,9 @@
 /* Gluten */
 /* @import url("https://fonts.googleapis.com/css2?family=Gluten:wght@400;500;700;900&display=swap"); */
 
+/* Permanent Marker */
+@import url("https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Space+Mono:wght@400;700&display=swap");
+
 :root {
   /* Cool Gray IBM https://www.ibm.com/design/language/color/ */
 
@@ -59,6 +62,7 @@
   /* font-family */
 
   /* --fontFamily: "Gluten", "Inconsolata", sans-serif; */
+  --highlightFont: "Permanent Marker", cursive;
   --fontFamily: "Inter", sans-serif;
   --monospace: "Inconsolata", monospace;
 

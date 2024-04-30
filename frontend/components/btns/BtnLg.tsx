@@ -1,16 +1,16 @@
-import React, { FC, AnchorHTMLAttributes } from "react"
+import React, { FC, ButtonHTMLAttributes } from "react"
 import styled from "styled-components"
 
-interface LinkBtnProps extends AnchorHTMLAttributes<HTMLAnchorElement> {
+interface BtnLgProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   $type: "primary" | "secondary"
   $text: string
 }
 
-const LinkBtn: FC<LinkBtnProps> = ({ $type, $text, ...props }): JSX.Element => {
+const BtnLg: FC<BtnLgProps> = ({ $type, $text, ...props }): JSX.Element => {
   return (
-    <LinkBtnStyled $type={$type} {...props}>
+    <BtnLgStyled $type={$type} {...props}>
       {$text}
-    </LinkBtnStyled>
+    </BtnLgStyled>
   )
 }
 
@@ -29,20 +29,25 @@ const hoverBgColors = {
   secondary: "var(--underlay2)",
 }
 
-const LinkBtnStyled = styled.a<{ $type: "primary" | "secondary" }>`
-  /* common */
+const BtnLgStyled = styled.button<{ $type: "primary" | "secondary" }>`
   height: 3rem;
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-shrink: 0;
   gap: 0.5rem;
+  padding: 0 0.75rem;
   font-size: var(--fs6);
   font-weight: var(--fwBold);
-  padding: 0 1rem;
-  white-space: nowrap;
+  border-radius: 1.25rem;
   transition: var(--transition1);
 
-  /* custom */
+  /* disabled */
+
+  opacity: ${(p) => (p.disabled ? "0.5" : null)};
+
+  /* type based */
+
   color: ${(p) => colors[p.$type]};
   background-color: ${(p) => bgColors[p.$type]};
 
@@ -51,4 +56,4 @@ const LinkBtnStyled = styled.a<{ $type: "primary" | "secondary" }>`
   }
 `
 
-export default LinkBtn
+export default BtnLg

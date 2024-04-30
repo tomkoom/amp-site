@@ -1,31 +1,41 @@
 import React, { FC } from "react"
 import { styled } from "styled-components"
-import { LinkBtn } from "@/components/ui/btns/_index"
-import { DISCORD_URL, MINTER, LEDGER_ID } from "@/constants/_index"
-import kid from "@/assets/flex.gif"
+import { LinkBtnLg } from "@/components/btns/_index"
+import { DISCORD_URL, MINTER, LEDGER_ID, VAULT_ID } from "@/constants/_index"
+import flex from "@/assets/flex.gif"
 
 const Description: FC = (): JSX.Element => {
-  const ledgerUrl =
-    "https://dashboard.internetcomputer.org/canister/qn35o-kiaaa-aaaag-aciiq-cai"
+  // const ledgerUrl =
+  //   "https://dashboard.internetcomputer.org/canister/qn35o-kiaaa-aaaag-aciiq-cai"
 
   return (
     <DescriptionStyled>
       <h3>Well-Known Accounts</h3>
+
       <ul>
         <li>
           <p className="label">Ledger id</p>
-          <a className="value" href={ledgerUrl} target="_blank">
-            {LEDGER_ID}
-          </a>
+          <p className="value">{LEDGER_ID}</p>
         </li>
 
         <li>
           <p className="label">Minter & burn address</p>
           <p className="value">{MINTER}</p>
         </li>
+
+        <li>
+          <p className="label">Vault</p>
+          <p className="value">{VAULT_ID}</p>
+        </li>
       </ul>
 
-      <LinkBtn
+      <LinkBtnLg
+        style={{
+          fontFamily: "var(--highlightFont)",
+          backgroundColor: "var(--colorDiscord)",
+          fontSize: "var(--fs5)",
+          marginTop: "1rem",
+        }}
         $type={"secondary"}
         $text={"Join Discord"}
         href={DISCORD_URL}
@@ -33,7 +43,7 @@ const Description: FC = (): JSX.Element => {
         rel="noreferrer noopener"
       />
 
-      <img src={kid} alt="flex" />
+      {/* <img src={flex} alt="flex" /> */}
     </DescriptionStyled>
   )
 }
@@ -49,6 +59,7 @@ const DescriptionStyled = styled.div`
   }
 
   ul {
+    width: 100%;
     display: flex;
     align-items: stretch;
     justify-content: flex-start;
@@ -56,6 +67,7 @@ const DescriptionStyled = styled.div`
     gap: 0.5rem;
 
     > li {
+      flex: 1;
       background-color: var(--background);
       padding: 1rem;
 
@@ -65,8 +77,13 @@ const DescriptionStyled = styled.div`
 
       > p.label {
         color: var(--tertiaryColor);
-        font-size: var(--fsText);
-        margin-bottom: 0.25rem;
+        font-size: var(--fs6);
+      }
+
+      > p.value {
+        /* font-family: monospace; */
+        font-family: var(--highlightFont);
+        font-size: var(--fs5);
       }
 
       > a.value {

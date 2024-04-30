@@ -15,7 +15,7 @@ const Home: FC = (): JSX.Element => {
 const HomeStyled = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 3rem;
 `
 
 export default Home

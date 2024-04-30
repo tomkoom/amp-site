@@ -1,16 +1,16 @@
 import React, { FC, AnchorHTMLAttributes } from "react"
 import styled from "styled-components"
 
-interface LinkBtnProps extends AnchorHTMLAttributes<HTMLAnchorElement> {
+interface LinkBtnLgProps extends AnchorHTMLAttributes<HTMLAnchorElement> {
   $type: "primary" | "secondary"
   $text: string
 }
 
-const LinkBtn: FC<LinkBtnProps> = ({ $type, $text, ...props }): JSX.Element => {
+const LinkBtnLg: FC<LinkBtnLgProps> = ({ $type, $text, ...props }): JSX.Element => {
   return (
-    <LinkBtnStyled $type={$type} {...props}>
+    <LinkBtnLgStyled $type={$type} {...props}>
       {$text}
-    </LinkBtnStyled>
+    </LinkBtnLgStyled>
   )
 }
 
@@ -29,9 +29,9 @@ const hoverBgColors = {
   secondary: "var(--underlay2)",
 }
 
-const LinkBtnStyled = styled.a<{ $type: "primary" | "secondary" }>`
+const LinkBtnLgStyled = styled.a<{ $type: "primary" | "secondary" }>`
   /* common */
-  height: 3rem;
+  height: 3.5rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -51,4 +51,4 @@ const LinkBtnStyled = styled.a<{ $type: "primary" | "secondary" }>`
   }
 `
 
-export default LinkBtn
+export default LinkBtnLg

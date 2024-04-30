@@ -7,7 +7,7 @@ const Nav: FC = (): JSX.Element => {
   return (
     <NavStyled>
       <div className="nav_items">
-        <NavLink to="/">
+        <NavLink className="logo" to="/">
           <h1>{PROJECT_NAME}</h1>
         </NavLink>
 
@@ -49,7 +49,7 @@ const NavStyled = styled.div`
     align-items: center;
     gap: 1rem;
 
-    > a {
+    > a:not(.logo) {
       color: var(--secondaryColor);
       transition: var(--transition1);
 
