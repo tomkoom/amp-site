@@ -31,7 +31,7 @@ const Nav: FC = (): JSX.Element => {
           Scan
         </a>
 
-        <NavLink to="/og_claim">Claim</NavLink>
+        {/* <NavLink to="/og_claim">Claim</NavLink> */}
       </div>
     </NavStyled>
   )

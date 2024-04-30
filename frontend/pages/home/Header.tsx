@@ -5,7 +5,7 @@ import { PROJECT_NAME } from "@/constants/_index"
 const Header: FC = (): JSX.Element => {
   const text =
     "The most #ic flexing token. Peer-to-peer social payments & meme digital currency"
-  const text2 = "MEME & P2P CURRENCY ON THE INTERNET COMPUTER"
+  const text2 = "P2P CURRENCY ON THE INTERNET COMPUTER"
 
   return (
     <HeaderStyled>

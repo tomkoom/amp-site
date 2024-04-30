@@ -80,7 +80,7 @@ const MetadataStyled = styled.div`
 
     > div {
       flex: 1;
-      padding: 0.75rem 0.75rem;
+      padding: 1rem;
       background-color: var(--background);
 
       > p {
