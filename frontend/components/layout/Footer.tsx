@@ -45,7 +45,7 @@ const FooterStyled = styled.footer`
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
-  gap: 0.5rem;
+  gap: 1rem;
 
   > p {
     font-size: var(--fs6);
@@ -55,12 +55,14 @@ const FooterStyled = styled.footer`
   div.links {
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
     gap: 1rem;
 
     a {
       font-size: var(--fs6);
       color: var(--tertiaryColor);
       transition: var(--transition1);
+      white-space: nowrap;
 
       &:hover {
         color: var(--primaryColor);

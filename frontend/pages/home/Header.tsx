@@ -34,7 +34,8 @@ const HeaderStyled = styled.div`
   gap: 0.5rem;
 
   > div.description {
-    margin: 2rem 0;
+    margin: 2rem 0 1rem 0;
+
     > h2 {
       font-size: var(--fs1);
       font-weight: var(--fwBold);

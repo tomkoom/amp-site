@@ -67,7 +67,7 @@ const MetadataStyled = styled.div`
   gap: 1rem;
 
   > h3 {
-    font-size: var(--fs5);
+    font-size: var(--fs6);
   }
 
   > div {

@@ -30,6 +30,8 @@ const Nav: FC = (): JSX.Element => {
         >
           Scan
         </a>
+
+        <NavLink to="/og_claim">Claim</NavLink>
       </div>
     </NavStyled>
   )
@@ -47,6 +49,8 @@ const NavStyled = styled.div`
   > div.nav_items {
     display: flex;
     align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
     gap: 1rem;
 
     > a:not(.logo) {
