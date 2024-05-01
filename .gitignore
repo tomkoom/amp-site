@@ -7,3 +7,6 @@ dist-ssr
 
 # declarations
 src/declarations/
+
+# ...
+.env

@@ -12,11 +12,13 @@ import {
 } from "@fortawesome/free-brands-svg-icons"
 
 // solid
-export const iExternalLink = <FontAwesomeIcon icon={faExternalLink} size="1x" />
+
+export const iExternalLink = <FontAwesomeIcon icon={faExternalLink} />
 
 // brands
-export const iTwitter = <FontAwesomeIcon icon={faTwitter} size="1x" />
+
 // export const iX = <FontAwesomeIcon icon={faX} />
-export const iTelegram = <FontAwesomeIcon icon={faTelegramPlane} size="1x" />
-export const iDiscord = <FontAwesomeIcon icon={faDiscord} size="1x" />
-export const iGithub = <FontAwesomeIcon icon={faGithub} size="1x" />
+export const iTwitter = <FontAwesomeIcon icon={faTwitter} />
+export const iTelegram = <FontAwesomeIcon icon={faTelegramPlane} />
+export const iDiscord = <FontAwesomeIcon icon={faDiscord} />
+export const iGithub = <FontAwesomeIcon icon={faGithub} />

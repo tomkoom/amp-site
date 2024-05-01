@@ -2,7 +2,6 @@ import React, { FC } from "react"
 import { styled } from "styled-components"
 import { LinkBtnLg } from "@/components/btns/_index"
 import { DISCORD_URL, MINTER, LEDGER_ID, VAULT_ID } from "@/constants/_index"
-import flex from "@/assets/flex.gif"
 
 const Description: FC = (): JSX.Element => {
   // const ledgerUrl =
@@ -24,7 +23,7 @@ const Description: FC = (): JSX.Element => {
         </li>
 
         <li>
-          <p className="label">Vault</p>
+          <p className="label">Treasury</p>
           <p className="value">{VAULT_ID}</p>
         </li>
       </ul>
@@ -42,8 +41,6 @@ const Description: FC = (): JSX.Element => {
         target="_blank"
         rel="noreferrer noopener"
       />
-
-      {/* <img src={flex} alt="flex" /> */}
     </DescriptionStyled>
   )
 }
@@ -81,7 +78,6 @@ const DescriptionStyled = styled.div`
       }
 
       > p.value {
-        /* font-family: monospace; */
         font-family: var(--highlightFont);
         font-size: var(--fs5);
       }
