@@ -18,9 +18,9 @@ const router = createBrowserRouter(
         <Route index element={<Snapshot />} />
       </Route>
 
-      <Route path="og_claim">
+      {/* <Route path="og_claim">
         <Route index element={<OgClaim />} />
-      </Route>
+      </Route> */}
 
       {/* <Route path="scan">
         <Route index element={<Scan />} />

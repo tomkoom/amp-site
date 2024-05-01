@@ -20,12 +20,15 @@ const Snapshot: FC = (): JSX.Element => {
 
   return (
     <SnapshotStyled>
-      <p>
-        <a href={nftMarketplace} target="_blank" rel="noreferrer noopener">
-          IC_Apps NFT holders
-        </a>{" "}
-        snapshot timestamp: {formatDateTime(timestamp)}
-      </p>
+      <div>
+        <p>
+          The vast share of tokens [%51] has been airdropped to the{" "}
+          <a href={nftMarketplace} target="_blank" rel="noreferrer noopener">
+            IC_Apps NFT holders
+          </a>{" "}
+        </p>
+        <p>Snapshot timestamp: {formatDateTime(timestamp)}</p>
+      </div>
 
       <LinkBtn
         $type={"primary"}
@@ -43,9 +46,11 @@ const SnapshotStyled = styled.div`
   align-items: center;
   gap: 1rem;
 
-  > p {
-    > a {
-      text-decoration: underline;
+  > div {
+    > p {
+      > a {
+        text-decoration: underline;
+      }
     }
   }
 `

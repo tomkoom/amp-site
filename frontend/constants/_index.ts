@@ -16,7 +16,9 @@ export const TOKEN_UI_GITHUB_URL = "https://github.com/tomkoom/flex_ui"
 export const DISCORD_URL = "https://discord.gg/pvaBPqcwA2"
 export const SCAN_URL = `https://ic.house/token/${LEDGER_ID}`
 export const SWAP_URL = `https://app.icpswap.com/swap?input=ryjl3-tyaaa-aaaaa-aaaba-cai&output=${LEDGER_ID}`
-export const LP_STATS_URL =
-  "https://info.icpswap.com/swap/pool/details/d7byr-vqaaa-aaaag-qddja-cai"
+export const ADD_LIQUIDITY_URL =
+  "https://app.icpswap.com/swap/liquidity/increase/1/dwdrx-waaaa-aaaag-qjvaa-cai"
+export const ICPSWAP_LP_STATS_URL =
+  "https://info.icpswap.com/swap/pool/details/dwdrx-waaaa-aaaag-qjvaa-cai"
 export const WHITEPAPER_URL =
   "https://tomkoom.notion.site/FLEX-whitepaper-bed7b18b77e2427797b05e72957709d2?pvs=4"

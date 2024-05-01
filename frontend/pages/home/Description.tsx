@@ -1,6 +1,6 @@
 import React, { FC } from "react"
 import { styled } from "styled-components"
-import { LinkBtnLg } from "@/components/btns/_index"
+import { LinkBtn } from "@/components/btns/_index"
 import { DISCORD_URL, MINTER, LEDGER_ID, VAULT_ID } from "@/constants/_index"
 
 const Description: FC = (): JSX.Element => {
@@ -28,11 +28,9 @@ const Description: FC = (): JSX.Element => {
         </li>
       </ul>
 
-      <LinkBtnLg
+      <LinkBtn
         style={{
-          fontFamily: "var(--highlightFont)",
           backgroundColor: "var(--colorDiscord)",
-          fontSize: "var(--fs5)",
           marginTop: "1rem",
         }}
         $type={"secondary"}
@@ -74,12 +72,12 @@ const DescriptionStyled = styled.div`
 
       > p.label {
         color: var(--tertiaryColor);
-        font-size: var(--fs6);
+        font-size: var(--fs7);
       }
 
       > p.value {
         font-family: var(--highlightFont);
-        font-size: var(--fs5);
+        font-size: var(--fs6);
       }
 
       > a.value {

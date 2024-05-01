@@ -89,14 +89,14 @@ const MetadataStyled = styled.div`
 
       > p.label {
         color: var(--tertiaryColor);
-        font-size: var(--fs6);
+        font-size: var(--fs7);
         font-weight: var(--fwMedium);
       }
 
       > p.value {
         font-weight: var(--fwMedium);
         font-family: var(--highlightFont);
-        font-size: var(--fs5);
+        font-size: var(--fs6);
       }
     }
   }

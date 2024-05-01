@@ -36,8 +36,8 @@ const LinkBtnStyled = styled.a<{ $type: "primary" | "secondary" }>`
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  font-size: var(--fs6);
-  font-weight: var(--fwBold);
+  font-size: var(--fs7);
+  font-weight: var(--fwBlack);
   padding: 0 1rem;
   white-space: nowrap;
   transition: var(--transition1);

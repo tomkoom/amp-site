@@ -1,20 +1,20 @@
 import React, { FC } from "react"
 import { styled } from "styled-components"
 import { PROJECT_NAME } from "@/constants/_index"
+import { LinkBtn } from "@/components/btns/_index"
+import { SWAP_URL, ADD_LIQUIDITY_URL } from "@/constants/_index"
 
 const Header: FC = (): JSX.Element => {
-  const text =
-    "The most #ic flexing token. Peer-to-peer social payments & meme digital currency"
-  const text2 = "P2P CURRENCY ON THE INTERNET COMPUTER"
+  const text = "P2P CURRENCY ON THE INTERNET COMPUTER"
 
   return (
     <HeaderStyled>
       <div className="description">
         <h2>{PROJECT_NAME}</h2>
-        <p>{text2}</p>
+        <p>{text}</p>
       </div>
 
-      {/* <div className="links">
+      <div className="links">
         <LinkBtn
           $type={"primary"}
           $text={"Get FLEX"}
@@ -22,7 +22,15 @@ const Header: FC = (): JSX.Element => {
           target="_blank"
           rel="noreferrer noopener"
         />
-      </div> */}
+
+        <LinkBtn
+          $type={"secondary"}
+          $text={"Add Liquidity & Earn Fees"}
+          href={ADD_LIQUIDITY_URL}
+          target="_blank"
+          rel="noreferrer noopener"
+        />
+      </div>
     </HeaderStyled>
   )
 }
@@ -56,22 +64,6 @@ const HeaderStyled = styled.div`
     align-items: center;
     justify-content: flex-start;
     gap: 0.5rem;
-
-    > a {
-      height: 3rem;
-      padding: 0 1rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 1rem;
-      color: var(--background);
-      background-color: var(--primaryColor);
-      transition: var(--transition1);
-
-      &:hover {
-        background-color: var(--secondaryColor);
-      }
-    }
   }
 `
 

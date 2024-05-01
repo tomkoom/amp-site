@@ -39,7 +39,6 @@ const BtnStyled = styled.button<{ $type: "primary" | "secondary" }>`
   padding: 0 0.75rem;
   font-size: var(--fsText);
   font-weight: var(--fwBold);
-  border-radius: 1.25rem;
   transition: var(--transition1);
 
   /* disabled */

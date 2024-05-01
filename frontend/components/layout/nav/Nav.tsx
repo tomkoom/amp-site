@@ -1,52 +1,15 @@
-import React, { FC, useEffect, useState } from "react"
+import React, { FC } from "react"
 import { styled } from "styled-components"
-import { PROJECT_NAME, WHITEPAPER_URL, SCAN_URL } from "@/constants/_index"
+import {
+  PROJECT_NAME,
+  WHITEPAPER_URL,
+  SCAN_URL,
+  ICPSWAP_LP_STATS_URL,
+} from "@/constants/_index"
 import { NavLink } from "react-router-dom"
 import { iExternalLink } from "@/components/icons/Icons"
-import { useNavigate } from "react-router-dom"
-
-// supabase
-import { createClient } from "@supabase/supabase-js"
-
-const supabase = createClient(
-  STATIC_CONTEXT.SUPABASE_URL,
-  STATIC_CONTEXT.SUPABASE_ANON_PUBLIC,
-)
 
 const Nav: FC = (): JSX.Element => {
-  const navigate = useNavigate()
-  const [user, setUser] = useState<any>()
-
-  const refreshSession = async () => {
-    const {
-      data: { user },
-    } = await supabase.auth.getUser()
-    // const id = user.identities[0].id
-    // console.log("id:", id)
-    setUser(user)
-  }
-
-  useEffect(() => {
-    refreshSession()
-  }, [])
-
-  const signInWithDiscord = async () => {
-    const { data, error } = await supabase.auth.signInWithOAuth({
-      provider: "discord",
-    })
-
-    if (error) {
-      throw new Error(error.message)
-    }
-  }
-
-  const signOut = async () => {
-    const { error } = await supabase.auth.signOut()
-    // console.log(error)
-    refreshSession()
-    navigate("/")
-  }
-
   return (
     <NavStyled>
       <div className="nav_items">
@@ -54,6 +17,16 @@ const Nav: FC = (): JSX.Element => {
           <h1>{PROJECT_NAME}</h1>
         </NavLink>
         <NavLink to="/snapshot">Snapshot</NavLink>
+        {/* <NavLink to="/og_claim">OG Claim</NavLink> */}
+
+        <a
+          className="link"
+          href={ICPSWAP_LP_STATS_URL}
+          target="_blank"
+          rel="noreferrer noopener"
+        >
+          ICPSwap LP Stats <span>{iExternalLink}</span>
+        </a>
 
         <a
           className="link"
@@ -61,7 +34,7 @@ const Nav: FC = (): JSX.Element => {
           target="_blank"
           rel="noreferrer noopener"
         >
-          Lightpaper {iExternalLink}
+          Whitepaper {iExternalLink}
         </a>
 
         <a
@@ -72,14 +45,6 @@ const Nav: FC = (): JSX.Element => {
         >
           Scan {iExternalLink}
         </a>
-
-        {user ? (
-          <span onClick={signOut}>Sign out</span>
-        ) : (
-          <span onClick={signInWithDiscord}>Sign in with Discord</span>
-        )}
-
-        <NavLink to="/og_claim">OG Claim</NavLink>
       </div>
     </NavStyled>
   )
@@ -90,10 +55,6 @@ const NavStyled = styled.div`
   justify-content: center;
   gap: 0.5rem;
 
-  * {
-    font-size: var(--fs6);
-  }
-
   > div.nav_items {
     display: flex;
     align-items: center;
@@ -101,19 +62,13 @@ const NavStyled = styled.div`
     flex-wrap: wrap;
     gap: 1rem;
 
+    > a {
+      font-size: var(--fs7);
+    }
+
     > a:not(.logo) {
       color: var(--secondaryColor);
       transition: var(--transition1);
-
-      &:hover {
-        color: var(--primaryColor);
-      }
-    }
-
-    > span {
-      color: var(--secondaryColor);
-      transition: var(--transition1);
-      cursor: pointer;
 
       &:hover {
         color: var(--primaryColor);
