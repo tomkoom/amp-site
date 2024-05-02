@@ -7,7 +7,7 @@ import { resolve } from "node:path"
 import "dotenv/config"
 
 const alias = [{ find: "@", replacement: resolve(__dirname) }]
-const { REACT_APP_SUPABASE_URL, REACT_APP_SUPABASE_ANON_PUBLIC } = process.env
+// const {} = process.env
 
 export default defineConfig({
   root: ".",
@@ -20,8 +20,7 @@ export default defineConfig({
   },
   define: {
     STATIC_CONTEXT: {
-      SUPABASE_URL: REACT_APP_SUPABASE_URL,
-      SUPABASE_ANON_PUBLIC: REACT_APP_SUPABASE_ANON_PUBLIC,
+      // ...
     },
   },
 

@@ -12,10 +12,10 @@ import { createClient } from "@supabase/supabase-js"
 import { useAppDispatch, useAppSelector } from "@/hooks/useRedux"
 import { setUserDiscordId, selectUserDiscordId } from "@/state/user"
 
-const supabase = createClient(
-  STATIC_CONTEXT.SUPABASE_URL,
-  STATIC_CONTEXT.SUPABASE_ANON_PUBLIC,
-)
+const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL
+const SUPABASE_ANON_PUBLIC = import.meta.env.VITE_SUPABASE_ANON_PUBLIC
+
+const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_PUBLIC)
 
 const OgClaim: FC = (): JSX.Element => {
   const dispatch = useAppDispatch()
@@ -48,14 +48,17 @@ const OgClaim: FC = (): JSX.Element => {
 
   const signOut = async () => {
     const { error } = await supabase.auth.signOut()
-    // console.log(error)
     refreshSession()
     navigate("/")
+
+    if (error) {
+      console.log(error)
+    }
   }
+
   return (
     <OgClaimStyled>
-      <p>...</p>
-      {/* <p>
+      <p>
         Sign in with Discord to claim your tokens. Available for{" "}
         <a href={DISCORD_URL} target="_blank" rel="noreferrer noopener">
           cyql Discord
@@ -66,13 +69,14 @@ const OgClaim: FC = (): JSX.Element => {
         <Btn $type={"secondary"} $text={"Sign out"} onClick={signOut} />
       ) : (
         <Btn
+          style={{ backgroundColor: "var(--colorDiscord" }}
           $type={"secondary"}
           $text={"Sign in with Discord"}
           onClick={signInWithDiscord}
         />
       )}
 
-      {userDiscordId && <Authenticated userDiscordId={userDiscordId} />} */}
+      {userDiscordId && <Authenticated userDiscordId={userDiscordId} />}
     </OgClaimStyled>
   )
 }

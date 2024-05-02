@@ -4,9 +4,6 @@ import { LinkBtn } from "@/components/btns/_index"
 import { DISCORD_URL, MINTER, LEDGER_ID, VAULT_ID } from "@/constants/_index"
 
 const Description: FC = (): JSX.Element => {
-  // const ledgerUrl =
-  //   "https://dashboard.internetcomputer.org/canister/qn35o-kiaaa-aaaag-aciiq-cai"
-
   return (
     <DescriptionStyled>
       <h3>Well-Known Accounts</h3>
@@ -23,7 +20,7 @@ const Description: FC = (): JSX.Element => {
         </li>
 
         <li>
-          <p className="label">Treasury</p>
+          <p className="label">Vault</p>
           <p className="value">{VAULT_ID}</p>
         </li>
       </ul>
@@ -79,18 +76,7 @@ const DescriptionStyled = styled.div`
         font-family: var(--highlightFont);
         font-size: var(--fs6);
       }
-
-      > a.value {
-        text-decoration: underline;
-      }
     }
-  }
-
-  > img {
-    width: 6rem;
-    height: 6rem;
-    object-fit: cover;
-    border-radius: 50%;
   }
 `
 

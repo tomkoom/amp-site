@@ -9,9 +9,9 @@ import Nat "mo:base/Nat";
 import T "./types";
 import Ledger "./ledger";
 
-actor {
-  let tokenCanister = "qk232-hqaaa-aaaag-aciia-cai";
-  let token = actor (tokenCanister) : Ledger.Self;
+shared actor class FLEX_UI(fs : T.FrontendSecret) = Self {
+  let ledgerId = "qn35o-kiaaa-aaaag-aciiq-cai";
+  let token = actor (ledgerId) : Ledger.Self;
   let nodeId = "";
   let adminId = "qacbl-dmvvz-7f4rd-qdkp2-drupw-qch3e-35tpx-xl6gh-my5bf-wndbh-xae";
   let e8s = 10 ** 8;
@@ -19,6 +19,8 @@ actor {
   let og2Amount = 2_500 * e8s;
 
   // stable
+
+  private stable var frontendSecret = fs;
 
   stable var usersOg1Entries : [(T.DiscordUserId, T.User)] = [];
   let usersOg1 = HashMap.fromIter<T.DiscordUserId, T.User>(usersOg1Entries.vals(), 10, Text.equal, Text.hash);
@@ -44,7 +46,12 @@ actor {
 
   public shared ({ caller }) func claim(discordUserId : T.DiscordUserId, principalId : Text, role : Text) : async ?Ledger.Result {
     assert (caller == Principal.fromText(nodeId));
-    var user : T.User = { id = ""; claimed = false; claimTimestamp = null };
+    var user : T.User = {
+      id = Principal.fromText("");
+      claimed = false;
+      claimPrincipalId = "";
+      claimTimestamp = null
+    };
 
     if (role == "og1") {
       switch (usersOg1.get(discordUserId)) {
@@ -62,7 +69,6 @@ actor {
 
     if (not user.claimed) {
       let id = Principal.fromText(principalId);
-      var amount = 0;
 
       if (role == "og1") {
         let transferRes = await _sendTokens(id, og1Amount);
@@ -80,6 +86,32 @@ actor {
     return null
   };
 
+  public shared ({ caller }) func claimFrontend(discordUserId : T.DiscordUserId, role : T.Role, claimPrincipalId : Text, fs : T.FrontendSecret) : async ?Ledger.Result {
+    assert (not Principal.isAnonymous(caller));
+    assert (fs == frontendSecret);
+    var user : T.User = {
+      id = caller;
+      claimed = false;
+      claimPrincipalId = claimPrincipalId;
+      claimTimestamp = null
+    };
+
+    // verify
+
+    switch (role) {
+      case (#og1) {
+        let transferRes = await _sendTokens(Principal.fromText(claimPrincipalId), og1Amount);
+        usersOg1.put(discordUserId, { user with claimed = true; claimTimestamp = ?Time.now() });
+        return ?transferRes
+      };
+      case (#og2) {
+        let transferRes = await _sendTokens(Principal.fromText(claimPrincipalId), og2Amount);
+        usersOg2.put(discordUserId, { user with claimed = true; claimTimestamp = ?Time.now() });
+        return ?transferRes
+      }
+    }
+  };
+
   // query
 
   public shared query ({ caller }) func claimedOg1UsersNum() : async Text {
@@ -94,6 +126,13 @@ actor {
     var num = 0;
     for (user in usersOg2.vals()) if (user.claimed) num += 1;
     return Nat.toText(num) # "/" # Nat.toText(usersOg2.size())
+  };
+
+  // ...
+
+  public shared ({ caller }) func updateFrontendSecret(newFrontendSecret : T.FrontendSecret) : async () {
+    assert (caller == Principal.fromText(adminId));
+    frontendSecret := newFrontendSecret
   };
 
   // state

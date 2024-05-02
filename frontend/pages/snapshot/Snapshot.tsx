@@ -22,9 +22,9 @@ const Snapshot: FC = (): JSX.Element => {
     <SnapshotStyled>
       <div>
         <p>
-          The vast share of tokens [%51] has been airdropped to the{" "}
+          The vast majority of tokens [%51] has been airdropped to the{" "}
           <a href={nftMarketplace} target="_blank" rel="noreferrer noopener">
-            IC_Apps NFT holders
+            IC_APPS NFT holders
           </a>{" "}
         </p>
         <p>Snapshot timestamp: {formatDateTime(timestamp)}</p>
@@ -49,7 +49,15 @@ const SnapshotStyled = styled.div`
   > div {
     > p {
       > a {
-        text-decoration: underline;
+        padding: 2px 0;
+        box-shadow: 0 2px white;
+        /* box-shadow: 0 3px tomato; */
+        transition: var(--transition1);
+
+        &:hover {
+          color: var(--secondaryColor);
+          box-shadow: 0 2px var(--secondaryColor);
+        }
       }
     }
   }
