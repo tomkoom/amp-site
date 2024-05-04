@@ -7,11 +7,12 @@ import { AnonymousIdentity, HttpAgent, Actor } from "@dfinity/agent"
 import { idlFactory } from "../../idl/icrc1_ledger"
 import { _SERVICE } from "../../idl/icrc1_ledger_types"
 import { HOST_IC, LEDGER_ID } from "../../constants/_index"
-import { useToken } from "@/hooks/_index"
+import { useToken, useDiscord } from "@/hooks/_index"
 
 const RootLayout: FC = (): JSX.Element => {
   const theme = "dark"
   const { refreshMetadata, refreshTransactions } = useToken()
+  const { refreshDiscordSession } = useDiscord()
   const [token, setToken] = useState<_SERVICE>()
 
   const initLedger = async (): Promise<void> => {
@@ -31,6 +32,10 @@ const RootLayout: FC = (): JSX.Element => {
 
   useEffect(() => {
     initLedger()
+  }, [])
+
+  useEffect(() => {
+    refreshDiscordSession()
   }, [])
 
   useEffect(() => {

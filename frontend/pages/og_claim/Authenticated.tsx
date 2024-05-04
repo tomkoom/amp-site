@@ -10,7 +10,7 @@ const Authenticated: FC<AuthenticatedProps> = ({
   return (
     <div>
       <p>Authenticated</p>
-      <p>Discord id: {userDiscordId}</p>
+      <p>Your Discord id: {userDiscordId}</p>
     </div>
   )
 }

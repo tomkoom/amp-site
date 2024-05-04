@@ -69,6 +69,7 @@
   /* shadows */
 
   --shadow1: rgba(var(--primaryColorRgb), 0.16) 0px 1px 4px;
+  --underline1: 0 2px #fff;
 
   /* animation */
 

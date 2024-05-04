@@ -50,7 +50,7 @@ const SnapshotStyled = styled.div`
     > p {
       > a {
         padding: 2px 0;
-        box-shadow: 0 2px white;
+        box-shadow: var(--underline1);
         /* box-shadow: 0 3px tomato; */
         transition: var(--transition1);
 

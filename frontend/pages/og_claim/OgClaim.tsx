@@ -1,60 +1,19 @@
-import React, { FC, useEffect, useState } from "react"
+import React, { FC } from "react"
 import styled from "styled-components"
-import { useNavigate } from "react-router-dom"
 import { Btn } from "@/components/btns/_index"
 import { DISCORD_URL } from "@/constants/_index"
 import { Authenticated } from "./_index"
-
-// supabase
-import { createClient } from "@supabase/supabase-js"
+import { useDiscord } from "@/hooks/_index"
 
 // state
-import { useAppDispatch, useAppSelector } from "@/hooks/useRedux"
-import { setUserDiscordId, selectUserDiscordId } from "@/state/user"
-
-const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL
-const SUPABASE_ANON_PUBLIC = import.meta.env.VITE_SUPABASE_ANON_PUBLIC
-
-const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_PUBLIC)
+import { useAppSelector } from "@/hooks/useRedux"
+import { selectUserDiscordId } from "@/state/user"
+import { selectLoading } from "@/state/loading"
 
 const OgClaim: FC = (): JSX.Element => {
-  const dispatch = useAppDispatch()
-  const navigate = useNavigate()
-  const [user, setUser] = useState<any>()
+  const { signInWithDiscord, signOutDiscord } = useDiscord()
   const userDiscordId = useAppSelector(selectUserDiscordId)
-
-  const refreshSession = async () => {
-    const {
-      data: { user },
-    } = await supabase.auth.getUser()
-    const id = user.identities[0].id
-    dispatch(setUserDiscordId(id))
-    setUser(user)
-  }
-
-  useEffect(() => {
-    refreshSession()
-  }, [])
-
-  const signInWithDiscord = async () => {
-    const { data, error } = await supabase.auth.signInWithOAuth({
-      provider: "discord",
-    })
-
-    if (error) {
-      throw new Error(error.message)
-    }
-  }
-
-  const signOut = async () => {
-    const { error } = await supabase.auth.signOut()
-    refreshSession()
-    navigate("/")
-
-    if (error) {
-      console.log(error)
-    }
-  }
+  const loading = useAppSelector(selectLoading)
 
   return (
     <OgClaimStyled>
@@ -65,15 +24,26 @@ const OgClaim: FC = (): JSX.Element => {
         </a>{" "}
         OG1 and OG2 Roles
       </p>
-      {user ? (
-        <Btn $type={"secondary"} $text={"Sign out"} onClick={signOut} />
+
+      {loading ? (
+        <p>...</p>
       ) : (
-        <Btn
-          style={{ backgroundColor: "var(--colorDiscord" }}
-          $type={"secondary"}
-          $text={"Sign in with Discord"}
-          onClick={signInWithDiscord}
-        />
+        <div>
+          {userDiscordId ? (
+            <Btn
+              $type={"secondary"}
+              $text={"Sign Out"}
+              onClick={signOutDiscord}
+            />
+          ) : (
+            <Btn
+              style={{ backgroundColor: "var(--colorDiscord" }}
+              $type={"secondary"}
+              $text={"Sign in With Discord"}
+              onClick={signInWithDiscord}
+            />
+          )}
+        </div>
       )}
 
       {userDiscordId && <Authenticated userDiscordId={userDiscordId} />}
@@ -84,11 +54,18 @@ const OgClaim: FC = (): JSX.Element => {
 const OgClaimStyled = styled.div`
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 1rem;
 
   > p {
     > a {
-      text-decoration: underline;
+      padding: 2px 0;
+      box-shadow: var(--underline1);
+      transition: var(--transition1);
+
+      &:hover {
+        color: var(--secondaryColor);
+      }
     }
   }
 `
