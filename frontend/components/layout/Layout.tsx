@@ -9,7 +9,7 @@ import { _SERVICE } from "../../idl/icrc1_ledger_types"
 import { HOST_IC, LEDGER_ID } from "../../constants/_index"
 import { useToken, useDiscord } from "@/hooks/_index"
 
-const RootLayout: FC = (): JSX.Element => {
+const Layout: FC = (): JSX.Element => {
   const theme = "dark"
   const { refreshMetadata, refreshTransactions } = useToken()
   const { refreshDiscordSession } = useDiscord()
@@ -47,18 +47,18 @@ const RootLayout: FC = (): JSX.Element => {
   // theme
 
   return (
-    <RootLayoutStyled className={theme}>
+    <LayoutStyled className={theme}>
       <Nav />
       <main className="main">
         <Outlet />
       </main>
 
       <Footer />
-    </RootLayoutStyled>
+    </LayoutStyled>
   )
 }
 
-const RootLayoutStyled = styled.div`
+const LayoutStyled = styled.div`
   display: flex;
   flex-direction: column;
   color: var(--primaryColor);
@@ -76,4 +76,4 @@ const RootLayoutStyled = styled.div`
   }
 `
 
-export default RootLayout
+export default Layout

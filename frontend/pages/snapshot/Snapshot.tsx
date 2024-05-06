@@ -22,12 +22,13 @@ const Snapshot: FC = (): JSX.Element => {
     <SnapshotStyled>
       <div>
         <p>
-          The vast majority of tokens [%51] has been airdropped to the{" "}
+          51% of total token supply has been airdropped to the{" "}
           <a href={nftMarketplace} target="_blank" rel="noreferrer noopener">
             IC_APPS NFT holders
           </a>{" "}
+          at the token launch to express gratitude for the support of cyql.io
+          (formerly icApps). Snapshot timestamp: {formatDateTime(timestamp)}
         </p>
-        <p>Snapshot timestamp: {formatDateTime(timestamp)}</p>
       </div>
 
       <LinkBtn

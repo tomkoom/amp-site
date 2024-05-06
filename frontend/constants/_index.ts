@@ -14,6 +14,7 @@ export const MINTER = "ci35a-cqaaa-aaaag-acmvq-cai"
 export const TOKEN_LEDGER_GITHUB_URL = "https://github.com/tomkoom/flex_ledger"
 export const TOKEN_UI_GITHUB_URL = "https://github.com/tomkoom/flex_ui"
 export const DISCORD_URL = "https://discord.gg/pvaBPqcwA2"
+export const TWITTER_URL = "https://twitter.com/_flexcoin"
 export const SCAN_URL = `https://ic.house/token/${LEDGER_ID}`
 export const SWAP_URL = `https://app.icpswap.com/swap?input=ryjl3-tyaaa-aaaaa-aaaba-cai&output=${LEDGER_ID}`
 export const ADD_LIQUIDITY_URL =

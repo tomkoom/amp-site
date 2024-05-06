@@ -1,7 +1,13 @@
 import React, { FC } from "react"
 import { styled } from "styled-components"
-import { LinkBtn } from "@/components/btns/_index"
-import { DISCORD_URL, MINTER, LEDGER_ID, VAULT_ID } from "@/constants/_index"
+import {
+  DISCORD_URL,
+  MINTER,
+  LEDGER_ID,
+  VAULT_ID,
+  TWITTER_URL,
+} from "@/constants/_index"
+import { iDiscord, iTwitter } from "@/components/icons/Icons"
 
 const Description: FC = (): JSX.Element => {
   return (
@@ -25,17 +31,25 @@ const Description: FC = (): JSX.Element => {
         </li>
       </ul>
 
-      <LinkBtn
-        style={{
-          backgroundColor: "var(--colorDiscord)",
-          marginTop: "1rem",
-        }}
-        $type={"secondary"}
-        $text={"Join Discord"}
-        href={DISCORD_URL}
-        target="_blank"
-        rel="noreferrer noopener"
-      />
+      <div className="links">
+        <a
+          id="twitter"
+          href={TWITTER_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {iTwitter}
+        </a>
+
+        <a
+          id="discord"
+          href={DISCORD_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {iDiscord}
+        </a>
+      </div>
     </DescriptionStyled>
   )
 }
@@ -75,6 +89,43 @@ const DescriptionStyled = styled.div`
       > p.value {
         font-family: var(--highlightFont);
         font-size: var(--fs6);
+      }
+    }
+  }
+
+  > div.links {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 2rem;
+
+    > a {
+      width: 3.25rem;
+      height: 3.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: var(--underlay1);
+      transition: var(--transition1);
+      border-radius: 50%;
+
+      > * {
+        font-size: 1.1rem;
+      }
+
+      &:hover {
+        /* color: var(--background); */
+        /* background-color: #fff; */
+
+        color: #fff;
+
+        &#discord {
+          background-color: var(--colorDiscord);
+        }
+
+        &#twitter {
+          background-color: var(--colorTwitter);
+        }
       }
     }
   }

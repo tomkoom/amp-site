@@ -24,8 +24,10 @@ const OgClaim: FC = (): JSX.Element => {
         </a>{" "}
         OG1 and OG2 Roles
       </p>
+      
+      <p>Coming soon</p>
 
-      {loading ? (
+      {/* {loading ? (
         <p>...</p>
       ) : (
         <div>
@@ -46,7 +48,7 @@ const OgClaim: FC = (): JSX.Element => {
         </div>
       )}
 
-      {userDiscordId && <Authenticated userDiscordId={userDiscordId} />}
+      {userDiscordId && <Authenticated userDiscordId={userDiscordId} />} */}
     </OgClaimStyled>
   )
 }

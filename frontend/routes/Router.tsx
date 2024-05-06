@@ -6,12 +6,12 @@ import {
 } from "react-router-dom"
 
 // components
-import RootLayout from "../components/layout/RootLayout"
+import Layout from "../components/layout/Layout"
 import { Home, Scan, Snapshot, OgClaim } from "../pages/_index"
 
 const router = createBrowserRouter(
   createRoutesFromElements(
-    <Route path="/" element={<RootLayout />}>
+    <Route path="/" element={<Layout />}>
       <Route index element={<Home />} />
 
       <Route path="snapshot">

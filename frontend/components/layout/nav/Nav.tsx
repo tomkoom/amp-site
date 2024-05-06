@@ -16,8 +16,20 @@ const Nav: FC = (): JSX.Element => {
         <NavLink className="logo" to="/">
           <h1>{PROJECT_NAME}</h1>
         </NavLink>
-        <NavLink to="/snapshot">Snapshot</NavLink>
-        <NavLink to="/og_claim">OG Claim</NavLink>
+
+        <NavLink
+          className={({ isActive }) => (isActive ? "active" : "")}
+          to="/snapshot"
+        >
+          Snapshot
+        </NavLink>
+
+        <NavLink
+          className={({ isActive }) => (isActive ? "active" : "")}
+          to="/og_claim"
+        >
+          OG Claim
+        </NavLink>
 
         <a
           className="link"
@@ -72,6 +84,11 @@ const NavStyled = styled.div`
 
       &:hover {
         color: var(--primaryColor);
+      }
+
+      &.active {
+        color: var(--primaryColor);
+        box-shadow: var(--underline1);
       }
     }
   }

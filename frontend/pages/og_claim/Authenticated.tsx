@@ -11,6 +11,7 @@ const Authenticated: FC<AuthenticatedProps> = ({
     <div>
       <p>Authenticated</p>
       <p>Your Discord id: {userDiscordId}</p>
+      <p>Claim coming soon</p>
     </div>
   )
 }
