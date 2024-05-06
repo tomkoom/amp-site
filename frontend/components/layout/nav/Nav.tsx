@@ -31,6 +31,13 @@ const Nav: FC = (): JSX.Element => {
           OG Claim
         </NavLink>
 
+        <NavLink
+          className={({ isActive }) => (isActive ? "active" : "")}
+          to="/ecosystem"
+        >
+          Ecosystem
+        </NavLink>
+
         <a
           className="link"
           href={ICPSWAP_LP_STATS_URL}

@@ -7,7 +7,7 @@ import {
 
 // components
 import Layout from "../components/layout/Layout"
-import { Home, Scan, Snapshot, OgClaim } from "../pages/_index"
+import { Home, Scan, Snapshot, OgClaim, Ecosystem } from "../pages/_index"
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -20,6 +20,10 @@ const router = createBrowserRouter(
 
       <Route path="og_claim">
         <Route index element={<OgClaim />} />
+      </Route>
+
+      <Route path="ecosystem">
+        <Route index element={<Ecosystem />} />
       </Route>
 
       {/* <Route path="scan">
