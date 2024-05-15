@@ -2,8 +2,7 @@ import React, { FC } from "react"
 import { styled } from "styled-components"
 import { PROJECT_NAME } from "@/constants/_index"
 import { LinkBtn } from "@/components/btns/_index"
-import { SWAP_URL, ADD_LIQUIDITY_URL } from "@/constants/_index"
-import YourSvg from "@/assets/logo_white.svg"
+import { SWAP_URL, ADD_LIQUIDITY_URL, FLEX_LOGO } from "@/constants/_index"
 
 const Header: FC = (): JSX.Element => {
   const text = "P2P CURRENCY ON THE INTERNET COMPUTER"
@@ -11,9 +10,10 @@ const Header: FC = (): JSX.Element => {
   return (
     <HeaderStyled>
       <div className="description">
-        <img src={YourSvg} alt="Your SVG" />
+        <img src={FLEX_LOGO} alt="FLEX logo" />
         <h2>{PROJECT_NAME}</h2>
-        <p>{text}</p>
+        <p className="description">{text}</p>
+        <p>Backed by cyql.io</p>
       </div>
 
       <div className="links">
@@ -58,9 +58,13 @@ const HeaderStyled = styled.div`
       margin-bottom: 0.5rem;
     }
 
-    > p {
+    > p.description {
       font-size: var(--fs5);
       font-weight: var(--fwBold);
+    }
+
+    > p {
+      font-size: var(--fs7);
     }
   }
 

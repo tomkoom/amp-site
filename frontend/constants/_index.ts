@@ -1,3 +1,6 @@
+export { default as FLEX_LOGO } from "@/assets/flex_logo_white.svg"
+
+// ...
 export const HOST_IC = "https://icp0.io"
 export const E8S = 10 ** 8
 export const PROJECT_NAME = "FLEX"
@@ -18,7 +21,7 @@ export const TWITTER_URL = "https://twitter.com/_flexcoin"
 export const SCAN_URL = `https://ic.house/token/${LEDGER_ID}`
 export const SWAP_URL = `https://app.icpswap.com/swap?input=ryjl3-tyaaa-aaaaa-aaaba-cai&output=${LEDGER_ID}`
 export const ADD_LIQUIDITY_URL =
-  "https://app.icpswap.com/swap/liquidity/increase/1/dwdrx-waaaa-aaaag-qjvaa-cai"
+  "https://app.icpswap.com/swap/liquidity/add/ryjl3-tyaaa-aaaaa-aaaba-cai/qn35o-kiaaa-aaaag-aciiq-cai"
 export const ICPSWAP_LP_STATS_URL =
   "https://info.icpswap.com/swap/pool/details/dwdrx-waaaa-aaaag-qjvaa-cai"
 export const WHITEPAPER_URL =
