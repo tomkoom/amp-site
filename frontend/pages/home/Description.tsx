@@ -1,13 +1,13 @@
 import React, { FC } from "react"
 import { styled } from "styled-components"
 import {
-  DISCORD_URL,
   MINTER,
   LEDGER_ID,
   VAULT,
-  TWITTER_URL,
+  FUND,
+  FUND_PROMO,
+  TREASURY,
 } from "@/constants/_index"
-import { iDiscord, iTwitter } from "@/components/icons/Icons"
 
 const Description: FC = (): JSX.Element => {
   return (
@@ -16,18 +16,33 @@ const Description: FC = (): JSX.Element => {
 
       <ul>
         <li>
-          <p className="label">Ledger id</p>
+          <p className="label">Ledger Id</p>
           <p className="value">{LEDGER_ID}</p>
         </li>
 
         <li>
-          <p className="label">Minter & burn address</p>
+          <p className="label">Minter & Burn Address</p>
           <p className="value">{MINTER}</p>
         </li>
 
         <li>
           <p className="label">Vault</p>
           <p className="value">{VAULT}</p>
+        </li>
+
+        <li>
+          <p className="label">Fund</p>
+          <p className="value">{FUND}</p>
+        </li>
+
+        <li>
+          <p className="label">Promo Fund</p>
+          <p className="value">{FUND_PROMO}</p>
+        </li>
+
+        <li>
+          <p className="label">Treasury</p>
+          <p className="value">{TREASURY}</p>
         </li>
       </ul>
     </DescriptionStyled>
@@ -46,10 +61,8 @@ const DescriptionStyled = styled.div`
 
   ul {
     width: 100%;
-    display: flex;
-    align-items: stretch;
-    justify-content: flex-start;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
     gap: 0.5rem;
 
     > li {
@@ -63,11 +76,12 @@ const DescriptionStyled = styled.div`
 
       > p.label {
         color: var(--tertiaryColor);
-        font-size: var(--fs7);
+        font-size: var(--fs6);
+        /* font-size: var(--fs7); */
       }
 
       > p.value {
-        font-family: var(--highlightFont);
+        /* font-family: var(--highlightFont); */
         font-size: var(--fs6);
       }
     }

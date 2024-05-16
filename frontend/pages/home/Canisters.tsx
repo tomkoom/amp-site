@@ -15,11 +15,10 @@ const formatBalance = (balanceE8s: number): string => {
 
 const Canisters: FC = (): JSX.Element => {
   const balances = useAppSelector(selectCanisterBalances)
-  console.log("balances: ", balances)
 
   return (
     <CanistersStyled>
-      <h3>Balances</h3>
+      <h3>Balances / Locked</h3>
       <div>
         {Object.keys(balances).map((canister) => (
           <div key={canister}>
@@ -62,6 +61,12 @@ const CanistersStyled = styled.div`
       flex: 1;
       background-color: var(--background);
       padding: 1rem;
+
+      > p.label {
+        color: var(--tertiaryColor);
+        font-size: var(--fs6);
+        /* font-size: var(--fs7); */
+      }
     }
   }
 `
