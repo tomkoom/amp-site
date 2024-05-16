@@ -4,7 +4,7 @@ import {
   DISCORD_URL,
   MINTER,
   LEDGER_ID,
-  VAULT_ID,
+  VAULT,
   TWITTER_URL,
 } from "@/constants/_index"
 import { iDiscord, iTwitter } from "@/components/icons/Icons"
@@ -27,29 +27,9 @@ const Description: FC = (): JSX.Element => {
 
         <li>
           <p className="label">Vault</p>
-          <p className="value">{VAULT_ID}</p>
+          <p className="value">{VAULT}</p>
         </li>
       </ul>
-
-      <div className="links">
-        <a
-          id="twitter"
-          href={TWITTER_URL}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          {iTwitter}
-        </a>
-
-        <a
-          id="discord"
-          href={DISCORD_URL}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          {iDiscord}
-        </a>
-      </div>
     </DescriptionStyled>
   )
 }
@@ -89,43 +69,6 @@ const DescriptionStyled = styled.div`
       > p.value {
         font-family: var(--highlightFont);
         font-size: var(--fs6);
-      }
-    }
-  }
-
-  > div.links {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    margin-top: 2rem;
-
-    > a {
-      width: 3.25rem;
-      height: 3.25rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background-color: var(--underlay1);
-      transition: var(--transition1);
-      border-radius: 50%;
-
-      > * {
-        font-size: 1.1rem;
-      }
-
-      &:hover {
-        /* color: var(--background); */
-        /* background-color: #fff; */
-
-        color: #fff;
-
-        &#discord {
-          background-color: var(--colorDiscord);
-        }
-
-        &#twitter {
-          background-color: var(--colorTwitter);
-        }
       }
     }
   }

@@ -44,6 +44,7 @@ const HeaderStyled = styled.div`
   gap: 0.5rem;
 
   > div.description {
+    text-align: center;
     margin: 2rem 0 1rem 0;
 
     > img {

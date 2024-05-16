@@ -11,8 +11,9 @@ import { useToken, useDiscord } from "@/hooks/_index"
 
 const Layout: FC = (): JSX.Element => {
   const theme = "dark"
-  const { refreshMetadata, refreshTransactions } = useToken()
-  const { refreshDiscordSession } = useDiscord()
+  const { refreshMetadata, refreshCanisterBalances, refreshTransactions } =
+    useToken()
+  // const { refreshDiscordSession } = useDiscord()
   const [token, setToken] = useState<_SERVICE>()
 
   const initLedger = async (): Promise<void> => {
@@ -34,17 +35,24 @@ const Layout: FC = (): JSX.Element => {
     initLedger()
   }, [])
 
-  useEffect(() => {
-    refreshDiscordSession()
-  }, [])
+  // useEffect(() => {
+  //   refreshDiscordSession()
+  // }, [])
+
+  const setTokenData = async (): Promise<void> => {
+    try {
+      await refreshMetadata(token)
+      await refreshCanisterBalances(token)
+      // await refreshTransactions(token)
+    } catch (error) {
+      throw new Error(error)
+    }
+  }
 
   useEffect(() => {
     if (!token) return
-    refreshMetadata(token)
-    refreshTransactions(token)
+    setTokenData()
   }, [token])
-
-  // theme
 
   return (
     <LayoutStyled className={theme}>

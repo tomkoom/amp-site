@@ -6,6 +6,7 @@ import theme from "./theme"
 import transactions from "./transactions"
 import metadata from "./metadata"
 import user from "./user"
+import canisterBalances from "./canisterBalances"
 
 export const store = configureStore({
   reducer: {
@@ -15,6 +16,7 @@ export const store = configureStore({
     transactions,
     metadata,
     user,
+    canisterBalances,
   },
 })
 
