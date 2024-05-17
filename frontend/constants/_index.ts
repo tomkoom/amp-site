@@ -7,6 +7,7 @@ export const PROJECT_NAME = "FLEX"
 export const TOKEN_SYMBOL = "FLEX"
 
 // token
+export const TOTAL_SUPPLY = { e8s: 268_000_000 * E8S }
 export const LEDGER_ID = "qn35o-kiaaa-aaaag-aciiq-cai"
 export const CANDID_URL = `https://a4gq6-oaaaa-aaaab-qaa4q-cai.raw.ic0.app/?id=${LEDGER_ID}`
 export const LIQUIDITY_POOL_URL = `https://app.icpswap.com/swap/liquidity/add/ryjl3-tyaaa-aaaaa-aaaba-cai/${LEDGER_ID}/3000`
@@ -22,6 +23,7 @@ export const CANISTERS = [
   { name: "vault", id: "qk232-hqaaa-aaaag-aciia-cai" },
   { name: "fund", id: "cp23u-piaaa-aaaag-acmva-cai" },
   { name: "fundPromo", id: "cbyw4-uyaaa-aaaag-acmua-cai" },
+  { name: "ogClaim", id: "cgzqi-zaaaa-aaaag-acmuq-cai" },
   { name: "treasury", id: "vne52-waaaa-aaaag-aciva-cai" },
 ]
 

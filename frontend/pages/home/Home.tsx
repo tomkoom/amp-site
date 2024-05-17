@@ -1,6 +1,12 @@
 import React, { FC } from "react"
 import { styled } from "styled-components"
-import { Header, Metadata, Description, Canisters, Socials } from "./_index"
+import {
+  Header,
+  Metadata,
+  Description,
+  CanisterBalances,
+  Socials,
+} from "./_index"
 
 const Home: FC = (): JSX.Element => {
   return (
@@ -8,7 +14,7 @@ const Home: FC = (): JSX.Element => {
       <Header />
       <Metadata />
       <Description />
-      <Canisters />
+      <CanisterBalances />
       <Socials />
     </HomeStyled>
   )

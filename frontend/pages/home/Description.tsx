@@ -76,12 +76,11 @@ const DescriptionStyled = styled.div`
 
       > p.label {
         color: var(--tertiaryColor);
-        font-size: var(--fs6);
-        /* font-size: var(--fs7); */
+        font-size: var(--fs7);
+        font-weight: var(--fwMedium);
       }
 
       > p.value {
-        /* font-family: var(--highlightFont); */
         font-size: var(--fs6);
       }
     }

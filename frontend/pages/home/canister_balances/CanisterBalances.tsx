@@ -2,6 +2,7 @@ import React, { FC } from "react"
 import styled from "styled-components"
 import { formatNumber, camelToTitle } from "@/utils/_index"
 import { TOKEN_SYMBOL } from "@/constants/_index"
+import { Circulation } from "./_index"
 
 // state
 import { useAppSelector } from "@/hooks/useRedux"
@@ -13,17 +14,23 @@ const formatBalance = (balanceE8s: number): string => {
   return formatNumber(num)
 }
 
-const Canisters: FC = (): JSX.Element => {
+const CanisterBalances: FC = (): JSX.Element => {
   const balances = useAppSelector(selectCanisterBalances)
 
   return (
-    <CanistersStyled>
-      <h3>Balances / Locked</h3>
-      <div>
+    <CanisterBalancesStyled>
+      <h3>Canister Balances / Circulation</h3>
+      <Circulation />
+
+      <div className="balances">
         {Object.keys(balances).map((canister) => (
           <div key={canister}>
             <p className="label">
-              {canister === "fundPromo" ? "Promo Fund" : camelToTitle(canister)}
+              {canister === "fundPromo"
+                ? "Promo Fund"
+                : canister === "ogClaim"
+                ? "OG Claim Reserve"
+                : camelToTitle(canister)}
             </p>
             <p className="value">
               {formatBalance(balances[canister].balance.e8s)} {TOKEN_SYMBOL}
@@ -36,11 +43,11 @@ const Canisters: FC = (): JSX.Element => {
           <p>Locked</p>
         </div>
       </div> */}
-    </CanistersStyled>
+    </CanisterBalancesStyled>
   )
 }
 
-const CanistersStyled = styled.div`
+const CanisterBalancesStyled = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -50,7 +57,7 @@ const CanistersStyled = styled.div`
     font-size: var(--fs6);
   }
 
-  > div {
+  > div.balances {
     width: 100%;
     display: flex;
     align-items: stretch;
@@ -62,13 +69,22 @@ const CanistersStyled = styled.div`
       background-color: var(--background);
       padding: 1rem;
 
+      > p {
+        line-height: 140%;
+      }
+
       > p.label {
         color: var(--tertiaryColor);
-        font-size: var(--fs6);
-        /* font-size: var(--fs7); */
+        font-size: var(--fs7);
+        font-weight: var(--fwMedium);
+        margin-bottom: 0.1rem;
+      }
+
+      > p.value {
+        white-space: nowrap;
       }
     }
   }
 `
 
-export default Canisters
+export default CanisterBalances
