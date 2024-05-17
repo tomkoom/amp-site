@@ -31,9 +31,9 @@ const Circulation: FC = (): JSX.Element => {
   return (
     <CirculationStyled>
       <p>
-        Circulating supply: {getCirculation()} (
+        Circulating supply: {getCirculation()} [
         {getCirculationPercent().toFixed(2)}
-        )%
+        %]
       </p>
 
       <div className="bar">
@@ -58,8 +58,8 @@ const CirculationStyled = styled.div`
     background-color: var(--underlay2);
 
     > div.filled {
-      height: 1.5rem;
-      background-color: #fff;
+      height: 1rem;
+      background-color: var(--highlight1);
     }
   }
 `

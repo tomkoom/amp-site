@@ -56,6 +56,7 @@ const HeaderStyled = styled.div`
       font-weight: var(--fwBold);
       line-height: 120%;
       font-family: var(--highlightFont);
+      color: var(--highlight1);
       margin-bottom: 0.5rem;
     }
 

@@ -7,9 +7,13 @@ export interface Canister {
   balance: Token
 }
 
+export interface CanisterBalanceItem {
+  [canisterName: string]: Canister
+}
+
 interface CanisterBalancesState {
   totalLocked: Token
-  canisterBalances: { [canisterName: string]: Canister }
+  canisterBalances: CanisterBalanceItem
 }
 
 const initialState: CanisterBalancesState = {
@@ -21,10 +25,7 @@ const canisterBalances = createSlice({
   name: "canisterBalances",
   initialState,
   reducers: {
-    setCanisterBalance(
-      state,
-      { payload }: PayloadAction<CanisterBalancesState>,
-    ) {
+    setCanisterBalance(state, { payload }: PayloadAction<CanisterBalanceItem>) {
       const key = Object.keys(payload)[0]
       const value = payload[key]
       state.canisterBalances[key] = value

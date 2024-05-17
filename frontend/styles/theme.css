@@ -28,4 +28,7 @@
   --underlay1: var(--coolGray90);
   --underlay2: var(--coolGray80);
   --underlay3: var(--coolGray70);
+
+  /* ... */
+  --highlight1: #aeea00;
 }

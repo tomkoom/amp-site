@@ -20,7 +20,7 @@ const colors = {
 }
 
 const bgColors = {
-  primary: "var(--primaryColor)",
+  primary: "var(--highlight1)",
   secondary: "var(--underlay1)",
 }
 
